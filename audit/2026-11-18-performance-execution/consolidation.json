@@ -2,7 +2,7 @@
   "status": "consolidated",
   "reviewedOn": "2026-11-18",
   "reviewedFiles": {
-    "PLAN.md": "472f92a5dbc12554b63888fa4b7caa80ef6e025d"
+    "PLAN.md": "f6c0d4b7531860498b69ab565fcec21dd95c9720"
   },
-  "summary": "Bilan de clôture et livraison Pages caafdd1 relus. P2, P3 et P4 sont résolus. Le push de cette mise à jour documentaire vérifie la voie sans déploiement prévue par P1."
+  "summary": "Bilan clos relu. P1 à P4 sont résolus. La CI documentaire de P1 a réussi en 61 s contre 108 s pour la référence, avec le déploiement Pages caafdd1 conservé."
 }
