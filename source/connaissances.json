@@ -1,0 +1,3114 @@
+{
+  "version": "0.4.0",
+  "sources": [
+    {
+      "id": "src-preetude",
+      "title": "Histoire et filiations des langages et des modèles de données",
+      "kind": "ai-prestudy",
+      "consulted": "2026-11-18",
+      "path": "sources/preetude/histoire-et-filiations-des-langages.pdf",
+      "sha256": "337f41981e4a69d634b3e6f49ff3017c835e0b3ffbce3e6050d46b8a8926f4d5",
+      "note": "Fourni par l’utilisateur ; références bibliographiques à résoudre.",
+      "revision": 1
+    },
+    {
+      "id": "src-codd-1970",
+      "title": "A Relational Model of Data for Large Shared Data Banks",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://doi.org/10.1145/362384.362685",
+      "note": "E. F. Codd, CACM, juin 1970.",
+      "revision": 1
+    },
+    {
+      "id": "src-sequel-1974",
+      "title": "SEQUEL: A Structured English Query Language",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://s3.us.cloud-object-storage.appdomain.cloud/res-files/2705-sequel-1974.pdf",
+      "note": "D. D. Chamberlin et R. F. Boyce, SIGFIDET, 1974.",
+      "revision": 1
+    },
+    {
+      "id": "src-chen-1976",
+      "title": "The Entity-Relationship Model—Toward a Unified View of Data",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://www.lancellotti.info/DataDesign/chen-1976-entity-relationship-model.pdf",
+      "note": "Peter P. S. Chen, ACM TODS, mars 1976. DOI 10.1145/320434.320440.",
+      "revision": 1
+    },
+    {
+      "id": "src-selinger-1979",
+      "title": "Access Path Selection in a Relational Database Management System",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://web.eecs.umich.edu/~michjc/eecs584/Papers/selinger_1979.pdf",
+      "note": "P. Griffiths Selinger et al., SIGMOD, 1979. DOI 10.1145/582095.582099.",
+      "revision": 1
+    },
+    {
+      "id": "src-reunion-sql",
+      "title": "The 1995 SQL Reunion: System R",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://www.mcjones.org/System_R/SQL_Reunion_95/sqlr95-System.html",
+      "note": "Témoignage rétrospectif de Don Chamberlin sur le changement de nom.",
+      "revision": 1
+    },
+    {
+      "id": "src-rfc4627",
+      "title": "RFC 4627: The application/json Media Type for JavaScript Object Notation (JSON)",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://www.rfc-editor.org/rfc/rfc4627",
+      "note": "Douglas Crockford, juillet 2006.",
+      "revision": 1
+    },
+    {
+      "id": "src-pg92",
+      "title": "PostgreSQL 9.2 Release Notes",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://www.postgresql.org/docs/9.2/release-9-2.html",
+      "note": "Documentation officielle du projet PostgreSQL, version publiée en 2012.",
+      "revision": 1
+    },
+    {
+      "id": "src-wirth-projets",
+      "revision": 1,
+      "title": "Summary of projects by N. Wirth, 1962–1999",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://people.inf.ethz.ch/wirth/projects.html",
+      "note": "Rétrospective de Niklaus Wirth hébergée par l’ETH Zürich."
+    },
+    {
+      "id": "src-pascal-rapport",
+      "revision": 1,
+      "title": "The Programming Language Pascal",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://www.standardpascal.org/The_Programming_Language_Pascal_1970.pdf",
+      "note": "Rapport original de Niklaus Wirth, deuxième édition datée de juillet 1971, copie numérisée."
+    },
+    {
+      "id": "src-embarcadero-turbo-delphi",
+      "revision": 1,
+      "title": "Delphi and Turbo Pascal – 43 Years of Continuous Innovation",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://blogs.embarcadero.com/delphi-and-turbo-pascal-43-years-of-continuous-innovation/amp/",
+      "note": "Rétrospective de l’éditeur qui a repris la gamme."
+    },
+    {
+      "id": "src-borland-tp55",
+      "revision": 1,
+      "title": "Turbo Pascal 5.5 Object-Oriented Programming Guide",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://bitsavers.org/pdf/borland/turbo_pascal/Turbo_Pascal_Version_5.5_Object-Oriented_Programming_Guide_1989.pdf",
+      "note": "Borland International, 1989. Manuel d’origine numérisé."
+    },
+    {
+      "id": "src-delphi-equipe",
+      "revision": 1,
+      "title": "Celebrating Delphi’s 31st Anniversary",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://delphi.embarcadero.com/",
+      "note": "Embarcadero, rétrospective institutionnelle avec témoignage de Danny Thorpe."
+    },
+    {
+      "id": "src-delphi-objets",
+      "revision": 1,
+      "title": "Classes and Objects (Delphi)",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://docwiki.embarcadero.com/RADStudio/Sydney/en/Classes_and_Objects_(Delphi)",
+      "note": "Documentation RAD Studio Sydney."
+    },
+    {
+      "id": "src-delphi-vcl",
+      "revision": 1,
+      "title": "VCL Overview",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://docwiki.embarcadero.com/RADStudio/Sydney/en/VCL_Overview",
+      "note": "Documentation RAD Studio Sydney sur la programmation visuelle et événementielle."
+    },
+    {
+      "id": "src-delphi-ce13",
+      "revision": 1,
+      "title": "Delphi 13 Community Edition Is Now Available",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://blogs.embarcadero.com/delphi-13-community-edition-is-now-available/",
+      "note": "Annonce Embarcadero du 11 août 2026."
+    },
+    {
+      "id": "src-hejlsberg-2001",
+      "revision": 1,
+      "title": "Anders Hejlsberg on C# and .NET",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://blog.mattmags.com/2001/07/04/anders-hejlsberg-on-c-and-net/",
+      "note": "Entretien de Matt Nicholson avec Anders Hejlsberg, publié en juillet 2001."
+    },
+    {
+      "id": "src-hejlsberg-csharp",
+      "revision": 1,
+      "title": "Anders Hejlsberg: Geek of the Week",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://www.red-gate.com/simple-talk/opinion/geek-of-the-week/anders-hejlsberg-geek-of-the-week/",
+      "note": "Entretien de Richard Morris avec Anders Hejlsberg sur la conception de C#."
+    },
+    {
+      "id": "src-csharp-2000",
+      "revision": 1,
+      "title": "Microsoft Introduces Highly Productive .NET Programming Language: C#",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://news.microsoft.com/source/2000/06/26/microsoft-introduces-highly-productive-net-programming-language-c/",
+      "note": "Communiqué Microsoft du 26 juin 2000."
+    },
+    {
+      "id": "src-csharp-spec",
+      "revision": 1,
+      "title": "Introduction — C# language specification",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction",
+      "note": "Microsoft Learn, introduction à la spécification et attribution des principaux concepteurs."
+    },
+    {
+      "id": "src-ecma334",
+      "revision": 1,
+      "title": "ECMA-334 — C# language specification",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://ecma-international.org/publications-and-standards/standards/ecma-334/",
+      "note": "Ecma International, catalogue des éditions."
+    },
+    {
+      "id": "src-js-hopl",
+      "revision": 1,
+      "title": "JavaScript: The First 20 Years",
+      "kind": "academic",
+      "consulted": "2026-11-18",
+      "url": "https://www.wirfs-brock.com/allen/jshopl.pdf",
+      "note": "Allen Wirfs-Brock et Brendan Eich, HOPL, 2020. Version corrigée des auteurs, mars 2021."
+    },
+    {
+      "id": "src-hejlsberg-ts",
+      "revision": 1,
+      "title": "Anders Hejlsberg — TypeScript team author profile",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://devblogs.microsoft.com/typescript/author/andersh/",
+      "note": "Profil professionnel publié par Microsoft sur le blog TypeScript."
+    },
+    {
+      "id": "src-ts-10-ans",
+      "revision": 1,
+      "title": "Ten Years of TypeScript",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://devblogs.microsoft.com/typescript/ten-years-of-typescript/",
+      "note": "Daniel Rosenwasser, responsable produit TypeScript chez Microsoft, 1er octobre 2022."
+    },
+    {
+      "id": "src-ts-1",
+      "revision": 1,
+      "title": "Announcing TypeScript 1.0",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-1-0/",
+      "note": "Annonce de l’équipe TypeScript à Build, 2 avril 2014."
+    },
+    {
+      "id": "src-ts-compat",
+      "revision": 1,
+      "title": "Type Compatibility",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html",
+      "note": "Manuel officiel TypeScript, justification du typage structurel."
+    },
+    {
+      "id": "src-ts-erasure",
+      "revision": 1,
+      "title": "TypeScript for the New Programmer",
+      "kind": "primary",
+      "consulted": "2026-11-18",
+      "url": "https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html",
+      "note": "Manuel officiel TypeScript, comportement JavaScript et effacement des types."
+    }
+  ],
+  "assertions": [
+    {
+      "id": "a-catalogue-flow-matic",
+      "subject": "flow-matic",
+      "text": "La préétude présente FLOW-MATIC dans sa fiche de la page 2.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 2",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-cobol",
+      "subject": "cobol",
+      "text": "La préétude présente COBOL dans sa fiche de la page 2.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 2",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-relationnel",
+      "subject": "relationnel",
+      "text": "La préétude présente Modèle relationnel dans sa fiche de la page 3.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 3",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-sql",
+      "subject": "sql",
+      "text": "La préétude présente SQL dans sa fiche de la page 3.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 3",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-entite-association",
+      "subject": "entite-association",
+      "text": "La préétude présente Modèle entité-association dans sa fiche de la page 3.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 3",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-c",
+      "subject": "c",
+      "text": "La préétude présente C dans sa fiche de la page 4.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 4",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-cpp",
+      "subject": "cpp",
+      "text": "La préétude présente C++ dans sa fiche de la page 4.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 4",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-perl",
+      "subject": "perl",
+      "text": "La préétude présente Perl dans sa fiche de la page 4.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 4",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-borland-pascal",
+      "subject": "borland-pascal",
+      "text": "La préétude présente Borland Pascal objet dans sa fiche de la page 5.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 5",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-python",
+      "subject": "python",
+      "text": "La préétude présente Python dans sa fiche de la page 5.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 5",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-java",
+      "subject": "java",
+      "text": "La préétude présente Java dans sa fiche de la page 5.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 5",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-ruby",
+      "subject": "ruby",
+      "text": "La préétude présente Ruby dans sa fiche de la page 5.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 5",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-delphi",
+      "subject": "delphi",
+      "text": "La préétude présente Delphi dans sa fiche de la page 6.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 6",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-csharp",
+      "subject": "csharp",
+      "text": "La préétude présente C# dans sa fiche de la page 6.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 6",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-dotnet",
+      "subject": "dotnet",
+      "text": "La préétude présente .NET dans sa fiche de la page 6.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 6",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-javascript",
+      "subject": "javascript",
+      "text": "La préétude présente JavaScript dans sa fiche de la page 7.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 7",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-typescript",
+      "subject": "typescript",
+      "text": "La préétude présente TypeScript dans sa fiche de la page 7.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 7",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-csv",
+      "subject": "csv",
+      "text": "La préétude présente CSV dans sa fiche de la page 8.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 8",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-xml",
+      "subject": "xml",
+      "text": "La préétude présente XML dans sa fiche de la page 8.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 8",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-yaml",
+      "subject": "yaml",
+      "text": "La préétude présente YAML dans sa fiche de la page 8.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 8",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-json",
+      "subject": "json",
+      "text": "La préétude présente JSON dans sa fiche de la page 8.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 8",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-rust",
+      "subject": "rust",
+      "text": "La préétude présente Rust dans sa fiche de la page 9.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 9",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-catalogue-go",
+      "subject": "go",
+      "text": "La préétude présente Go dans sa fiche de la page 9.",
+      "category": "cataloging",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 9",
+          "scope": "Repérage dans le document, sans validation des faits de la fiche.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "a-delphi-maintien",
+      "subject": "delphi",
+      "category": "vitality",
+      "observedAt": "2026-11-18",
+      "scope": "Gamme commerciale et Community Edition Delphi. Maintenance côté éditeur et compatibilité de langage documentée.",
+      "text": "Le lancement de Delphi 13 Community Edition atteste une continuité de la gamme. La conservation des anciens types object documente un mécanisme de compatibilité source. Ces indices portent sur le produit et son éditeur. La diffusion et le poids de la compatibilité dans les décisions d’adoption restent à mesurer.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-ce13",
+          "sourceRevision": 1,
+          "locator": "Annonce d’ouverture, What’s New et Who Can Use",
+          "scope": "Édition publiée le 11 août 2026 et conditions de mise à disposition."
+        },
+        {
+          "source": "src-delphi-objets",
+          "sourceRevision": 1,
+          "locator": "Compatibility of Class Types et Object Types",
+          "scope": "Coexistence des références de classe et des anciens types object conservés pour compatibilité."
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "r-cobol-flow",
+      "from": "cobol",
+      "to": "flow-matic",
+      "kind": "inspired-by",
+      "text": "Le PDF attribue à FLOW-MATIC une influence sur la description des données et les opérations de COBOL.",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 2",
+          "scope": "Influence ou contribution rapportée par la préétude ; source primaire à retrouver.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "r-cpp-c",
+      "from": "cpp",
+      "to": "c",
+      "kind": "derived-from",
+      "text": "Le PDF décrit C comme la base de C++.",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 4",
+          "scope": "Influence ou contribution rapportée par la préétude ; source primaire à retrouver.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "r-ts-js",
+      "from": "typescript",
+      "to": "javascript",
+      "kind": "derived-from",
+      "text": "TypeScript étend JavaScript avec une vérification statique et produit du JavaScript après effacement des annotations.",
+      "evidence": [
+        {
+          "source": "src-ts-10-ans",
+          "sourceRevision": 1,
+          "locator": "Récit du lancement et paragraphes sur la vérification et le comportement JavaScript",
+          "scope": "La taille des bases JavaScript motive la vérification, les outils d’édition et le maintien du comportement à l’exécution."
+        },
+        {
+          "source": "src-ts-erasure",
+          "sourceRevision": 1,
+          "locator": "Runtime Behavior et Erased Types",
+          "scope": "Le compilateur efface les annotations de type et préserve le comportement JavaScript."
+        }
+      ],
+      "revision": 2,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-json-js",
+      "from": "json",
+      "to": "javascript",
+      "kind": "inspired-by",
+      "text": "Le PDF relie la notation JSON aux littéraux de JavaScript.",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 8",
+          "scope": "Influence ou contribution rapportée par la préétude ; source primaire à retrouver.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "r-rust-raii",
+      "from": "rust",
+      "to": "raii",
+      "kind": "applies",
+      "text": "Le PDF décrit le RAII parmi les influences de C++ sur Rust.",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 9",
+          "scope": "Influence ou contribution rapportée par la préétude ; source primaire à retrouver.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "r-anders-ts",
+      "from": "hejlsberg",
+      "to": "typescript",
+      "kind": "contributes-to",
+      "text": "Hejlsberg est architecte principal de TypeScript chez Microsoft.",
+      "evidence": [
+        {
+          "source": "src-hejlsberg-ts",
+          "sourceRevision": 1,
+          "locator": "Encadré biographique",
+          "scope": "Microsoft identifie Hejlsberg comme architecte principal de TypeScript."
+        }
+      ],
+      "revision": 2,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-grace-flow",
+      "from": "hopper",
+      "to": "flow-matic",
+      "kind": "contributes-to",
+      "text": "Le PDF attribue la conception de B-0 à Hopper et son équipe.",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 2",
+          "scope": "Influence ou contribution rapportée par la préétude ; source primaire à retrouver.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "r-ken-go",
+      "from": "thompson",
+      "to": "go",
+      "kind": "contributes-to",
+      "text": "Le PDF cite Thompson parmi les trois concepteurs initiaux de Go.",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 9",
+          "scope": "Influence ou contribution rapportée par la préétude ; source primaire à retrouver.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "r-codd-relationnel",
+      "text": "Codd expose le modèle relationnel dans son article de 1970.",
+      "evidence": [
+        {
+          "source": "src-codd-1970",
+          "locator": "Auteur et résumé",
+          "scope": "Attribution de la formalisation publiée à Codd.",
+          "sourceRevision": 1
+        }
+      ],
+      "from": "codd",
+      "to": "relationnel",
+      "kind": "created",
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-chamberlin-sequel",
+      "text": "Chamberlin présente SEQUEL avec Boyce.",
+      "evidence": [
+        {
+          "source": "src-sequel-1974",
+          "locator": "p. 249 et remerciements",
+          "scope": "Coattribution du langage décrit.",
+          "sourceRevision": 1
+        }
+      ],
+      "from": "chamberlin",
+      "to": "sequel",
+      "kind": "created",
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-boyce-sequel",
+      "text": "Boyce présente SEQUEL avec Chamberlin.",
+      "evidence": [
+        {
+          "source": "src-sequel-1974",
+          "locator": "p. 249 et remerciements",
+          "scope": "Coattribution du langage décrit.",
+          "sourceRevision": 1
+        }
+      ],
+      "from": "boyce",
+      "to": "sequel",
+      "kind": "created",
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-chen-er",
+      "text": "Chen propose le modèle entité-relation et sa représentation graphique.",
+      "evidence": [
+        {
+          "source": "src-chen-1976",
+          "locator": "p. 9, résumé",
+          "scope": "Attribution de la formalisation publiée.",
+          "sourceRevision": 1
+        }
+      ],
+      "from": "chen",
+      "to": "entite-association",
+      "kind": "created",
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-ibm-system-r",
+      "text": "Le laboratoire IBM de San José développe le prototype System R.",
+      "evidence": [
+        {
+          "source": "src-selinger-1979",
+          "locator": "§1, Introduction",
+          "scope": "Organisation qui porte le prototype de recherche.",
+          "sourceRevision": 1
+        }
+      ],
+      "from": "ibm",
+      "to": "system-r",
+      "kind": "supports",
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-sequel-relationnel",
+      "text": "SEQUEL permet d’interroger des données selon le modèle relationnel de Codd.",
+      "evidence": [
+        {
+          "source": "src-sequel-1974",
+          "locator": "pp. 249–250, résumé et §2",
+          "scope": "L’article rattache explicitement le langage aux relations normalisées de Codd.",
+          "sourceRevision": 1
+        }
+      ],
+      "from": "sequel",
+      "to": "relationnel",
+      "kind": "applies",
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-sequel-square",
+      "text": "Les auteurs rapprochent les opérations de SEQUEL de celles de SQUARE.",
+      "evidence": [
+        {
+          "source": "src-sequel-1974",
+          "locator": "§2 et références 13–14",
+          "scope": "Antécédent technique cité par les auteurs.",
+          "sourceRevision": 1
+        }
+      ],
+      "from": "sequel",
+      "to": "square",
+      "kind": "inspired-by",
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-sql-sequel",
+      "text": "SQL continue la lignée de SEQUEL, dont le nom a été changé pendant le projet.",
+      "evidence": [
+        {
+          "source": "src-reunion-sql",
+          "locator": "Témoignage de Don Chamberlin sur le nom SEQUEL",
+          "scope": "Continuité entre les deux noms. Les nœuds rendent les premiers jalons lisibles.",
+          "sourceRevision": 1
+        }
+      ],
+      "from": "sql",
+      "to": "sequel",
+      "kind": "inherits-from",
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-er-relationnel",
+      "text": "Chen présente le modèle entité-relation comme une généralisation de modèles existants, dont le modèle relationnel.",
+      "evidence": [
+        {
+          "source": "src-chen-1976",
+          "locator": "§1 et §4.1",
+          "scope": "Place du relationnel dans la synthèse de Chen.",
+          "sourceRevision": 1
+        }
+      ],
+      "from": "entite-association",
+      "to": "relationnel",
+      "kind": "inspired-by",
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-er-reseau",
+      "text": "Chen identifie dans les modèles réseau une distinction partielle entre entités et associations.",
+      "evidence": [
+        {
+          "source": "src-chen-1976",
+          "locator": "§1 et §4.2",
+          "scope": "Antécédent explicite de la distinction formalisée par Chen.",
+          "sourceRevision": 1
+        }
+      ],
+      "from": "entite-association",
+      "to": "modele-reseau",
+      "kind": "inspired-by",
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-system-r-sql",
+      "text": "System R exécute des requêtes SQL.",
+      "evidence": [
+        {
+          "source": "src-selinger-1979",
+          "locator": "Résumé et §1",
+          "scope": "Le prototype est le système qui choisit un plan pour une requête SQL.",
+          "sourceRevision": 1
+        }
+      ],
+      "from": "system-r",
+      "to": "sql",
+      "kind": "implements",
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-system-r-index",
+      "text": "L’optimiseur de System R choisit notamment entre un balayage du segment et un accès par index.",
+      "evidence": [
+        {
+          "source": "src-selinger-1979",
+          "locator": "§2, The Research Storage System",
+          "scope": "Les index sont des chemins d’accès possibles pour le moteur.",
+          "sourceRevision": 1
+        }
+      ],
+      "from": "system-r",
+      "to": "index-bdd",
+      "kind": "applies",
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-json-echange",
+      "text": "Le RFC 4627 décrit JSON comme format textuel d’échange de données structurées.",
+      "evidence": [
+        {
+          "source": "src-rfc4627",
+          "locator": "Résumé et §1",
+          "scope": "Usage décrit en 2006, sans prétention de dater le premier usage.",
+          "sourceRevision": 1
+        }
+      ],
+      "from": "json",
+      "to": "echange-donnees",
+      "kind": "used-for",
+      "period": {
+        "start": 2006,
+        "end": 2006,
+        "precision": "year"
+      },
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-json-stockage",
+      "text": "PostgreSQL 9.2 sait stocker des valeurs JSON dans un type dédié.",
+      "evidence": [
+        {
+          "source": "src-pg92",
+          "locator": "§E.25.3.6, Data Types",
+          "scope": "Usage de stockage attesté dans PostgreSQL 9.2, sans prétention de priorité.",
+          "sourceRevision": 1
+        }
+      ],
+      "from": "json",
+      "to": "stockage-donnees",
+      "kind": "used-for",
+      "period": {
+        "start": 2012,
+        "end": 2012,
+        "precision": "year"
+      },
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-pg-json",
+      "text": "PostgreSQL 9.2 ajoute un type qui stocke et valide des données JSON.",
+      "evidence": [
+        {
+          "source": "src-pg92",
+          "locator": "§E.25.3.6, Data Types",
+          "scope": "Mise en œuvre concrète de l’usage de stockage.",
+          "sourceRevision": 1
+        }
+      ],
+      "from": "postgresql",
+      "to": "json",
+      "kind": "applies",
+      "period": {
+        "start": 2012,
+        "end": 2012,
+        "precision": "year"
+      },
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "r-wirth-pascal",
+      "from": "wirth",
+      "to": "pascal",
+      "kind": "created",
+      "text": "Niklaus Wirth conçoit Pascal à Zurich à partir de son travail sur ALGOL W.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-wirth-projets",
+          "sourceRevision": 1,
+          "locator": "Pascal, 1968–72",
+          "scope": "Wirth présente ALGOL W comme base et précise ses objectifs de conception."
+        }
+      ]
+    },
+    {
+      "id": "r-pascal-algol-w",
+      "from": "pascal",
+      "to": "algol-w",
+      "kind": "inspired-by",
+      "text": "Wirth donne ALGOL W comme base de Pascal. Il cherche un langage adapté à la conception de systèmes et à l’enseignement.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-wirth-projets",
+          "sourceRevision": 1,
+          "locator": "Pascal, 1968–72",
+          "scope": "Wirth présente ALGOL W comme base et précise ses objectifs de conception."
+        }
+      ]
+    },
+    {
+      "id": "r-pascal-types",
+      "from": "pascal",
+      "to": "typage-statique",
+      "kind": "applies",
+      "text": "Pascal permet de déclarer les types des données, notamment des enregistrements composés de champs.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-pascal-rapport",
+          "sourceRevision": 1,
+          "locator": "Introduction et chapitre sur les types de données",
+          "scope": "Rapport de Wirth : structures de contrôle et types déclarés."
+        }
+      ]
+    },
+    {
+      "id": "r-pascal-enseignement",
+      "from": "pascal",
+      "to": "probleme-enseigner-structurer",
+      "kind": "addresses",
+      "text": "Wirth cherche des structures assez claires pour enseigner la programmation et utilisables pour concevoir des systèmes.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-wirth-projets",
+          "sourceRevision": 1,
+          "locator": "Pascal, 1968–72",
+          "scope": "Wirth présente ALGOL W comme base et précise ses objectifs de conception."
+        }
+      ]
+    },
+    {
+      "id": "r-anders-turbo",
+      "from": "hejlsberg",
+      "to": "turbo-pascal",
+      "kind": "contributes-to",
+      "text": "Le compilateur Pascal de Hejlsberg fournit le noyau que Borland reprend sous licence pour Turbo Pascal.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-embarcadero-turbo-delphi",
+          "sourceRevision": 1,
+          "locator": "Pre-Release Origins et Turbo Pascal 1.0",
+          "scope": "Compilation Pascal, licence Borland et environnement intégré."
+        }
+      ]
+    },
+    {
+      "id": "r-borland-turbo",
+      "from": "borland",
+      "to": "turbo-pascal",
+      "kind": "supports",
+      "text": "Borland acquiert une licence sur le compilateur et lance Turbo Pascal.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-embarcadero-turbo-delphi",
+          "sourceRevision": 1,
+          "locator": "Pre-Release Origins et Turbo Pascal 1.0",
+          "scope": "Compilation Pascal, licence Borland et environnement intégré."
+        }
+      ]
+    },
+    {
+      "id": "r-turbo-pascal-langage",
+      "from": "turbo-pascal",
+      "to": "pascal",
+      "kind": "implements",
+      "text": "Turbo Pascal fournit une implémentation de Pascal pour micro-ordinateurs.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-embarcadero-turbo-delphi",
+          "sourceRevision": 1,
+          "locator": "Pre-Release Origins et Turbo Pascal 1.0",
+          "scope": "Compilation Pascal, licence Borland et environnement intégré."
+        }
+      ]
+    },
+    {
+      "id": "r-turbo-cycle",
+      "from": "turbo-pascal",
+      "to": "probleme-cycle-edition-compilation",
+      "kind": "addresses",
+      "text": "L’éditeur, le compilateur et l’éditeur de liens sont réunis dans un environnement qui raccourcit la boucle de retour.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-embarcadero-turbo-delphi",
+          "sourceRevision": 1,
+          "locator": "Pre-Release Origins et Turbo Pascal 1.0",
+          "scope": "Compilation Pascal, licence Borland et environnement intégré."
+        }
+      ]
+    },
+    {
+      "id": "r-borland-objet-pascal",
+      "from": "borland-pascal",
+      "to": "pascal",
+      "kind": "derived-from",
+      "text": "L’extension livrée avec Turbo Pascal 5.5 ajoute des types object, l’héritage et des méthodes virtuelles au langage.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-borland-tp55",
+          "sourceRevision": 1,
+          "locator": "Chapitre 3, Object types, pp. 75–80",
+          "scope": "Déclarations object, héritage et méthodes virtuelles dans Turbo Pascal 5.5."
+        }
+      ]
+    },
+    {
+      "id": "r-turbo-objet-pascal",
+      "from": "turbo-pascal",
+      "to": "borland-pascal",
+      "kind": "implements",
+      "text": "La version 5.5 de Turbo Pascal fournit ces extensions objet décrites dans le manuel Borland.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-borland-tp55",
+          "sourceRevision": 1,
+          "locator": "Chapitre 3, Object types, pp. 75–80",
+          "scope": "Déclarations object, héritage et méthodes virtuelles dans Turbo Pascal 5.5."
+        }
+      ]
+    },
+    {
+      "id": "r-delphi-turbo",
+      "from": "delphi",
+      "to": "turbo-pascal",
+      "kind": "succeeds",
+      "text": "Delphi prend le relais de la gamme Turbo Pascal chez Borland en ciblant le développement visuel Windows.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-embarcadero-turbo-delphi",
+          "sourceRevision": 1,
+          "locator": "Turbo Pascal 7.0 / Borland Pascal 7.0, puis Succession",
+          "scope": "L’éditeur identifie la dernière version DOS et le passage de Borland à Delphi."
+        }
+      ]
+    },
+    {
+      "id": "r-delphi-pascal",
+      "from": "delphi",
+      "to": "delphi-object-pascal",
+      "kind": "implements",
+      "text": "Le compilateur de l’environnement Delphi met en œuvre son dialecte d’Object Pascal.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-equipe",
+          "sourceRevision": 1,
+          "locator": "Wayback Machine, Some Team Members et Brilliance",
+          "scope": "Équipe de 1995, cadre visuel Windows et langage Object Pascal de Borland."
+        }
+      ]
+    },
+    {
+      "id": "r-delphi-objet-borland",
+      "from": "delphi-object-pascal",
+      "to": "borland-pascal",
+      "kind": "inherits-from",
+      "text": "Le dialecte de Delphi conserve les anciens types object et utilise des types class à sémantique de référence pour son modèle de classes.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-borland-tp55",
+          "sourceRevision": 1,
+          "locator": "Chapitre 3, Object types, pp. 75–80",
+          "scope": "Déclarations object, héritage et méthodes virtuelles dans Turbo Pascal 5.5."
+        },
+        {
+          "source": "src-delphi-objets",
+          "sourceRevision": 1,
+          "locator": "Compatibility of Class Types et Object Types",
+          "scope": "Coexistence des références de classe et des anciens types object conservés pour compatibilité."
+        }
+      ]
+    },
+    {
+      "id": "r-anders-delphi",
+      "from": "hejlsberg",
+      "to": "delphi",
+      "kind": "contributes-to",
+      "text": "Hejlsberg est architecte principal de Delphi chez Borland.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-hejlsberg-ts",
+          "sourceRevision": 1,
+          "locator": "Encadré biographique",
+          "scope": "Microsoft identifie Hejlsberg comme architecte principal de TypeScript."
+        },
+        {
+          "source": "src-embarcadero-turbo-delphi",
+          "sourceRevision": 1,
+          "locator": "Récit du lancement, ouverture",
+          "scope": "Rôle d’architecte principal lors du lancement de Delphi."
+        }
+      ]
+    },
+    {
+      "id": "r-chuck-delphi",
+      "from": "chuck-jazdzewski",
+      "to": "delphi",
+      "kind": "contributes-to",
+      "text": "Chuck Jazdzewski fait partie de l’équipe de R&D qui livre Delphi en 1995.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-equipe",
+          "sourceRevision": 1,
+          "locator": "Wayback Machine, Some Team Members et Brilliance",
+          "scope": "Équipe de 1995, cadre visuel Windows et langage Object Pascal de Borland."
+        }
+      ]
+    },
+    {
+      "id": "r-borland-delphi",
+      "from": "borland",
+      "to": "delphi",
+      "kind": "supports",
+      "text": "L’équipe de R&D de Borland met sur le marché le produit Delphi en 1995.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-equipe",
+          "sourceRevision": 1,
+          "locator": "Wayback Machine, Some Team Members et Brilliance",
+          "scope": "Équipe de 1995, cadre visuel Windows et langage Object Pascal de Borland."
+        }
+      ]
+    },
+    {
+      "id": "r-delphi-windows",
+      "from": "delphi",
+      "to": "probleme-interfaces-windows",
+      "kind": "addresses",
+      "text": "Le concepteur visuel, la compilation native et la bibliothèque de composants raccourcissent la construction des interfaces Windows.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-equipe",
+          "sourceRevision": 1,
+          "locator": "Wayback Machine, Some Team Members et Brilliance",
+          "scope": "Équipe de 1995, cadre visuel Windows et langage Object Pascal de Borland."
+        },
+        {
+          "source": "src-delphi-vcl",
+          "sourceRevision": 1,
+          "locator": "Properties et Events",
+          "scope": "Réglage des propriétés et câblage d’un gestionnaire OnClick dans l’inspecteur d’objets."
+        }
+      ]
+    },
+    {
+      "id": "r-delphi-integration-composants",
+      "from": "delphi",
+      "to": "probleme-integration-composants",
+      "kind": "addresses",
+      "text": "Le concepteur Delphi permet d’assembler des composants VCL, de régler leurs propriétés et d’associer leurs événements à des gestionnaires depuis l’inspecteur d’objets.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-vcl",
+          "sourceRevision": 1,
+          "locator": "Properties et Events",
+          "scope": "Réglage des propriétés et câblage d’un gestionnaire OnClick dans l’inspecteur d’objets."
+        }
+      ]
+    },
+    {
+      "id": "r-delphi-vcl-composants",
+      "from": "delphi-vcl",
+      "to": "composants-pme",
+      "kind": "applies",
+      "text": "La VCL offre des composants paramétrables, auxquels on associe des gestionnaires d’événements dans l’inspecteur.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-vcl",
+          "sourceRevision": 1,
+          "locator": "Properties et Events",
+          "scope": "Réglage des propriétés et câblage d’un gestionnaire OnClick dans l’inspecteur d’objets."
+        }
+      ]
+    },
+    {
+      "id": "r-csharp-delphi",
+      "from": "csharp",
+      "to": "delphi",
+      "kind": "inspired-by",
+      "text": "Hejlsberg cite Delphi comme influence et comme exemple d’outillage productif. Le modèle propriétés, méthodes, événements de C# reprend une pratique illustrée par Delphi et d’autres environnements.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-hejlsberg-csharp",
+          "sourceRevision": 1,
+          "locator": "Question sur ce que l’équipe a appris de Java",
+          "scope": "Hejlsberg cite Delphi, Java et C++ et précise les apports de Java."
+        },
+        {
+          "source": "src-hejlsberg-2001",
+          "sourceRevision": 1,
+          "locator": "What was the reasoning behind C#? et How have you achieved that with C#?",
+          "scope": "Objectif de productivité et modèle propriétés, méthodes, événements avec event et delegate."
+        }
+      ]
+    },
+    {
+      "id": "r-csharp-java",
+      "from": "csharp",
+      "to": "java",
+      "kind": "inspired-by",
+      "text": "Hejlsberg attribue à Java la démonstration de l’intérêt de la sûreté de typage, des exceptions et du ramasse-miettes pour un langage courant.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-hejlsberg-csharp",
+          "sourceRevision": 1,
+          "locator": "Question sur ce que l’équipe a appris de Java",
+          "scope": "Hejlsberg cite Delphi, Java et C++ et précise les apports de Java."
+        }
+      ]
+    },
+    {
+      "id": "r-hejlsberg-csharp",
+      "from": "hejlsberg",
+      "to": "csharp",
+      "kind": "created",
+      "text": "La spécification nomme Hejlsberg, Wiltamuth et Golde parmi les principaux concepteurs de C#.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-csharp-spec",
+          "sourceRevision": 1,
+          "locator": "Introduction, premier paragraphe",
+          "scope": "Identifie Hejlsberg, Wiltamuth et Golde comme principaux inventeurs."
+        }
+      ]
+    },
+    {
+      "id": "r-scott-wiltamuth-csharp",
+      "from": "scott-wiltamuth",
+      "to": "csharp",
+      "kind": "created",
+      "text": "La spécification nomme Hejlsberg, Wiltamuth et Golde parmi les principaux concepteurs de C#.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-csharp-spec",
+          "sourceRevision": 1,
+          "locator": "Introduction, premier paragraphe",
+          "scope": "Identifie Hejlsberg, Wiltamuth et Golde comme principaux inventeurs."
+        }
+      ]
+    },
+    {
+      "id": "r-peter-golde-csharp",
+      "from": "peter-golde",
+      "to": "csharp",
+      "kind": "created",
+      "text": "La spécification nomme Hejlsberg, Wiltamuth et Golde parmi les principaux concepteurs de C#.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-csharp-spec",
+          "sourceRevision": 1,
+          "locator": "Introduction, premier paragraphe",
+          "scope": "Identifie Hejlsberg, Wiltamuth et Golde comme principaux inventeurs."
+        }
+      ]
+    },
+    {
+      "id": "r-microsoft-csharp",
+      "from": "microsoft",
+      "to": "csharp",
+      "kind": "supports",
+      "text": "Microsoft développe et annonce C# dans le cadre de sa stratégie .NET.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-csharp-spec",
+          "sourceRevision": 1,
+          "locator": "Introduction, premier paragraphe",
+          "scope": "Identifie Hejlsberg, Wiltamuth et Golde comme principaux inventeurs."
+        },
+        {
+          "source": "src-csharp-2000",
+          "sourceRevision": 1,
+          "locator": "Communiqué du 26 juin 2000, premiers paragraphes",
+          "scope": "Microsoft annonce C# et le positionne sur la plateforme .NET."
+        }
+      ]
+    },
+    {
+      "id": "r-csharp-pme",
+      "from": "csharp",
+      "to": "composants-pme",
+      "kind": "applies",
+      "text": "C# donne une syntaxe aux propriétés et aux événements. Les delegates représentent les méthodes qu’un événement peut appeler.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-hejlsberg-2001",
+          "sourceRevision": 1,
+          "locator": "What was the reasoning behind C#? et How have you achieved that with C#?",
+          "scope": "Objectif de productivité et modèle propriétés, méthodes, événements avec event et delegate."
+        }
+      ]
+    },
+    {
+      "id": "r-csharp-integration",
+      "from": "csharp",
+      "to": "probleme-integration-composants",
+      "kind": "addresses",
+      "text": "L’équipe rend explicite dans le langage ce qui nécessitait ailleurs des conventions ou du code d’adaptation.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-hejlsberg-2001",
+          "sourceRevision": 1,
+          "locator": "What was the reasoning behind C#? et How have you achieved that with C#?",
+          "scope": "Objectif de productivité et modèle propriétés, méthodes, événements avec event et delegate."
+        }
+      ]
+    },
+    {
+      "id": "r-csharp-execution",
+      "from": "csharp",
+      "to": "execution-managee",
+      "kind": "applies",
+      "text": "L’implémentation Microsoft de C# s’appuie sur l’environnement d’exécution et les bibliothèques de .NET.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-csharp-spec",
+          "sourceRevision": 1,
+          "locator": "Introduction, premier paragraphe",
+          "scope": "Identifie Hejlsberg, Wiltamuth et Golde comme principaux inventeurs."
+        },
+        {
+          "source": "src-hejlsberg-2001",
+          "sourceRevision": 1,
+          "locator": "Is C# the native language of .NET?",
+          "scope": "Le runtime et ses bibliothèques visent plusieurs langages."
+        }
+      ]
+    },
+    {
+      "id": "r-dotnet-execution",
+      "from": "dotnet",
+      "to": "execution-managee",
+      "kind": "implements",
+      "text": "Le .NET Framework fournit un environnement d’exécution partagé entre plusieurs langages.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-hejlsberg-2001",
+          "sourceRevision": 1,
+          "locator": "Is C# the native language of .NET?",
+          "scope": "Le runtime et ses bibliothèques visent plusieurs langages."
+        }
+      ]
+    },
+    {
+      "id": "r-embarcadero-delphi",
+      "from": "embarcadero",
+      "to": "delphi",
+      "kind": "supports",
+      "text": "Embarcadero publie l’édition Delphi 13 Community Edition en 2026.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-ce13",
+          "sourceRevision": 1,
+          "locator": "Annonce d’ouverture, What’s New et Who Can Use",
+          "scope": "Édition publiée le 11 août 2026 et conditions de mise à disposition."
+        }
+      ]
+    },
+    {
+      "id": "r-eich-javascript",
+      "from": "brendan-eich",
+      "to": "javascript",
+      "kind": "created",
+      "text": "Brendan Eich conçoit et implémente le premier prototype de JavaScript chez Netscape en 1995.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-js-hopl",
+          "sourceRevision": 1,
+          "locator": "§1 et §3, JavaScript 1.0 and 1.1",
+          "scope": "Premier prototype conçu par Eich chez Netscape en 1995."
+        }
+      ]
+    },
+    {
+      "id": "r-microsoft-typescript",
+      "from": "microsoft",
+      "to": "typescript",
+      "kind": "supports",
+      "text": "L’équipe Microsoft dévoile TypeScript en 2012 et décrit un travail poursuivi avec des contributeurs externes.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-ts-10-ans",
+          "sourceRevision": 1,
+          "locator": "Récit du lancement et paragraphes sur la vérification et le comportement JavaScript",
+          "scope": "La taille des bases JavaScript motive la vérification, les outils d’édition et le maintien du comportement à l’exécution."
+        }
+      ]
+    },
+    {
+      "id": "r-ts-types",
+      "from": "typescript",
+      "to": "typage-statique",
+      "kind": "applies",
+      "text": "Le vérificateur de TypeScript analyse les types avant l’exécution et fournit de l’information aux outils d’édition.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-ts-10-ans",
+          "sourceRevision": 1,
+          "locator": "Récit du lancement et paragraphes sur la vérification et le comportement JavaScript",
+          "scope": "La taille des bases JavaScript motive la vérification, les outils d’édition et le maintien du comportement à l’exécution."
+        },
+        {
+          "source": "src-ts-erasure",
+          "sourceRevision": 1,
+          "locator": "Runtime Behavior et Erased Types",
+          "scope": "Le compilateur efface les annotations de type et préserve le comportement JavaScript."
+        }
+      ]
+    },
+    {
+      "id": "r-ts-structurel",
+      "from": "typescript",
+      "to": "typage-structurel",
+      "kind": "applies",
+      "text": "La compatibilité s’appuie sur les membres des types, ce qui convient à l’usage courant de littéraux d’objets en JavaScript.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-ts-compat",
+          "sourceRevision": 1,
+          "locator": "Premier exemple et paragraphe sur les objets anonymes",
+          "scope": "Les membres déterminent la compatibilité de base pour s’adapter aux pratiques JavaScript."
+        }
+      ]
+    },
+    {
+      "id": "r-ts-outillage",
+      "from": "typescript",
+      "to": "probleme-outiller-javascript",
+      "kind": "addresses",
+      "text": "Le typage assiste la détection d’erreurs, la complétion, la navigation et les refactorisations dans les grandes bases de code.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-ts-10-ans",
+          "sourceRevision": 1,
+          "locator": "Récit du lancement et paragraphes sur la vérification et le comportement JavaScript",
+          "scope": "La taille des bases JavaScript motive la vérification, les outils d’édition et le maintien du comportement à l’exécution."
+        }
+      ]
+    },
+    {
+      "id": "r-ts-compatibilite",
+      "from": "typescript",
+      "to": "probleme-compatibilite-javascript",
+      "kind": "addresses",
+      "text": "L’effacement des types permet au code passé par TypeScript de continuer à s’exécuter selon les règles de JavaScript.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-ts-erasure",
+          "sourceRevision": 1,
+          "locator": "Runtime Behavior et Erased Types",
+          "scope": "Le compilateur efface les annotations de type et préserve le comportement JavaScript."
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "e-flow",
+      "subject": "flow-matic",
+      "kind": "design",
+      "date": {
+        "start": 1955,
+        "end": 1955,
+        "precision": "approximate"
+      },
+      "text": "Repère approximatif de la préétude pour FLOW-MATIC/B-0.",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 2",
+          "scope": "Jalon rapporté par la préétude ; date à corroborer.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "e-python-start",
+      "subject": "python",
+      "kind": "design",
+      "date": {
+        "start": 1989,
+        "end": 1989,
+        "precision": "year"
+      },
+      "text": "Début de l’implémentation de Python rapporté par le PDF.",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 5",
+          "scope": "Jalon rapporté par la préétude ; date à corroborer.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "e-python-public",
+      "subject": "python",
+      "kind": "publication",
+      "date": {
+        "start": 1991,
+        "end": 1991,
+        "precision": "year"
+      },
+      "text": "Publication de Python sur Usenet rapportée par le PDF.",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 5",
+          "scope": "Jalon rapporté par la préétude ; date à corroborer.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "e-ts-public",
+      "subject": "typescript",
+      "kind": "publication",
+      "date": {
+        "start": 2012,
+        "end": 2012,
+        "precision": "year"
+      },
+      "text": "L’équipe TypeScript dévoile le langage publiquement le 1er octobre 2012.",
+      "evidence": [
+        {
+          "source": "src-ts-10-ans",
+          "sourceRevision": 1,
+          "locator": "Ouverture du billet",
+          "scope": "Date de la première présentation publique rappelée par l’équipe."
+        }
+      ],
+      "revision": 2,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "e-rust-stable",
+      "subject": "rust",
+      "kind": "release",
+      "date": {
+        "start": 2015,
+        "end": 2015,
+        "precision": "year"
+      },
+      "text": "Publication de Rust 1.0 rapportée par le PDF.",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 9",
+          "scope": "Jalon rapporté par la préétude ; date à corroborer.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified",
+      "versionLabel": "1.0"
+    },
+    {
+      "id": "e-csv",
+      "subject": "csv",
+      "kind": "attestation",
+      "date": {
+        "start": 1970,
+        "end": 1979,
+        "precision": "range"
+      },
+      "text": "Pratiques CSV attestées dans les années 1970 selon le PDF, sans origine précise établie.",
+      "evidence": [
+        {
+          "source": "src-preetude",
+          "locator": "page 8",
+          "scope": "Jalon rapporté par la préétude ; date à corroborer.",
+          "sourceRevision": 1
+        }
+      ],
+      "revision": 1,
+      "maturity": "unverified"
+    },
+    {
+      "id": "e-relationnel-1970",
+      "text": "Publication de l’article de Codd sur le modèle relationnel.",
+      "evidence": [
+        {
+          "source": "src-codd-1970",
+          "locator": "Notice ACM",
+          "scope": "Date de publication.",
+          "sourceRevision": 1
+        }
+      ],
+      "subject": "relationnel",
+      "kind": "publication",
+      "date": {
+        "start": 1970,
+        "end": 1970,
+        "precision": "year"
+      },
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "e-square-1973",
+      "text": "Travaux SQUARE annoncés dans des travaux de conférence et un rapport IBM.",
+      "evidence": [
+        {
+          "source": "src-sequel-1974",
+          "locator": "Références 13–14",
+          "scope": "Travaux de 1973 cités par les auteurs.",
+          "sourceRevision": 1
+        }
+      ],
+      "subject": "square",
+      "kind": "publication",
+      "date": {
+        "start": 1973,
+        "end": 1973,
+        "precision": "year"
+      },
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "e-sequel-1974",
+      "text": "Chamberlin et Boyce publient leur article sur SEQUEL.",
+      "evidence": [
+        {
+          "source": "src-sequel-1974",
+          "locator": "Première page et référence IBM SIGFIDET",
+          "scope": "Jalon de publication de SEQUEL.",
+          "sourceRevision": 1
+        }
+      ],
+      "subject": "sequel",
+      "kind": "publication",
+      "date": {
+        "start": 1974,
+        "end": 1974,
+        "precision": "year"
+      },
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "e-er-1975",
+      "text": "Chen présente une version de son article à VLDB.",
+      "evidence": [
+        {
+          "source": "src-chen-1976",
+          "locator": "Note de p. 9",
+          "scope": "La note donne la date de la présentation.",
+          "sourceRevision": 1
+        }
+      ],
+      "subject": "entite-association",
+      "kind": "presentation",
+      "date": {
+        "start": 1975,
+        "end": 1975,
+        "precision": "year"
+      },
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "e-er-1976",
+      "text": "L’article de Chen paraît dans ACM Transactions on Database Systems.",
+      "evidence": [
+        {
+          "source": "src-chen-1976",
+          "locator": "En-tête, p. 9",
+          "scope": "Date de publication en revue.",
+          "sourceRevision": 1
+        }
+      ],
+      "subject": "entite-association",
+      "kind": "publication",
+      "date": {
+        "start": 1976,
+        "end": 1976,
+        "precision": "year"
+      },
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "e-system-r-1979",
+      "text": "Selinger et ses collègues publient leur sélection des chemins d’accès dans System R.",
+      "evidence": [
+        {
+          "source": "src-selinger-1979",
+          "locator": "Résumé et notice SIGMOD",
+          "scope": "Date de publication de l’article sur l’optimiseur.",
+          "sourceRevision": 1
+        }
+      ],
+      "subject": "system-r",
+      "kind": "publication",
+      "date": {
+        "start": 1979,
+        "end": 1979,
+        "precision": "year"
+      },
+      "revision": 1,
+      "maturity": "substantiated"
+    },
+    {
+      "id": "e-pascal-compilateur-1970",
+      "subject": "pascal",
+      "kind": "attestation",
+      "date": {
+        "start": 1970,
+        "end": 1970,
+        "precision": "year"
+      },
+      "text": "Le premier compilateur Pascal devient opérationnel à Zurich sur la famille CDC 6000, selon Wirth.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-wirth-projets",
+          "sourceRevision": 1,
+          "locator": "Pascal, 1968–72",
+          "scope": "Wirth présente ALGOL W comme base et précise ses objectifs de conception."
+        }
+      ]
+    },
+    {
+      "id": "e-turbo-pascal-1",
+      "subject": "turbo-pascal",
+      "kind": "release",
+      "date": {
+        "start": 1983,
+        "end": 1983,
+        "precision": "year"
+      },
+      "text": "Borland lance Turbo Pascal 1.0 en novembre 1983.",
+      "versionLabel": "1.0",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-embarcadero-turbo-delphi",
+          "sourceRevision": 1,
+          "locator": "Pre-Release Origins et Turbo Pascal 1.0",
+          "scope": "Compilation Pascal, licence Borland et environnement intégré."
+        }
+      ]
+    },
+    {
+      "id": "e-turbo-pascal-55",
+      "subject": "turbo-pascal",
+      "kind": "release",
+      "date": {
+        "start": 1989,
+        "end": 1989,
+        "precision": "year"
+      },
+      "text": "Turbo Pascal 5.5 introduit les extensions objet dans la gamme DOS.",
+      "versionLabel": "5.5",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-borland-tp55",
+          "sourceRevision": 1,
+          "locator": "Chapitre 3, Object types, pp. 75–80",
+          "scope": "Déclarations object, héritage et méthodes virtuelles dans Turbo Pascal 5.5."
+        }
+      ]
+    },
+    {
+      "id": "e-turbo-pascal-7",
+      "subject": "turbo-pascal",
+      "kind": "release",
+      "date": {
+        "start": 1992,
+        "end": 1992,
+        "precision": "year"
+      },
+      "text": "La version 7.0, dernière de la gamme DOS selon Embarcadero, se décline en éditions Turbo Pascal et Borland Pascal.",
+      "versionLabel": "7.0",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-embarcadero-turbo-delphi",
+          "sourceRevision": 1,
+          "locator": "Turbo Pascal 7.0 / Borland Pascal 7.0, puis Succession",
+          "scope": "L’éditeur identifie la dernière version DOS et le passage de Borland à Delphi."
+        }
+      ]
+    },
+    {
+      "id": "e-delphi-1",
+      "subject": "delphi",
+      "kind": "release",
+      "date": {
+        "start": 1995,
+        "end": 1995,
+        "precision": "year"
+      },
+      "text": "Borland lance Delphi 1 le 14 février 1995.",
+      "versionLabel": "1.0",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-equipe",
+          "sourceRevision": 1,
+          "locator": "Wayback Machine, Some Team Members et Brilliance",
+          "scope": "Équipe de 1995, cadre visuel Windows et langage Object Pascal de Borland."
+        }
+      ]
+    },
+    {
+      "id": "e-js-prototype-1995",
+      "subject": "javascript",
+      "kind": "design",
+      "date": {
+        "start": 1995,
+        "end": 1995,
+        "precision": "year"
+      },
+      "text": "Brendan Eich réalise le premier prototype chez Netscape en mai 1995.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-js-hopl",
+          "sourceRevision": 1,
+          "locator": "§1 et §3, JavaScript 1.0 and 1.1",
+          "scope": "Premier prototype conçu par Eich chez Netscape en 1995."
+        }
+      ]
+    },
+    {
+      "id": "e-csharp-annonce-2000",
+      "subject": "csharp",
+      "kind": "presentation",
+      "date": {
+        "start": 2000,
+        "end": 2000,
+        "precision": "year"
+      },
+      "text": "Microsoft annonce C# le 26 juin 2000 pour la plateforme .NET.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-csharp-2000",
+          "sourceRevision": 1,
+          "locator": "Communiqué du 26 juin 2000, premiers paragraphes",
+          "scope": "Microsoft annonce C# et le positionne sur la plateforme .NET."
+        }
+      ]
+    },
+    {
+      "id": "e-csharp-ecma-2001",
+      "subject": "csharp",
+      "kind": "standardization",
+      "date": {
+        "start": 2001,
+        "end": 2001,
+        "precision": "year"
+      },
+      "text": "Première édition de la spécification ECMA-334 en décembre 2001.",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-ecma334",
+          "sourceRevision": 1,
+          "locator": "Catalogue des éditions",
+          "scope": "Date de la première édition."
+        }
+      ]
+    },
+    {
+      "id": "e-ts-1",
+      "subject": "typescript",
+      "kind": "release",
+      "date": {
+        "start": 2014,
+        "end": 2014,
+        "precision": "year"
+      },
+      "text": "L’équipe annonce TypeScript 1.0 le 2 avril 2014 à Build.",
+      "versionLabel": "1.0",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-ts-1",
+          "sourceRevision": 1,
+          "locator": "Ouverture et date du billet",
+          "scope": "Annonce de publication et disponibilité de la version."
+        }
+      ]
+    },
+    {
+      "id": "e-delphi-ce13-2026",
+      "subject": "delphi",
+      "kind": "release",
+      "date": {
+        "start": 2026,
+        "end": 2026,
+        "precision": "year"
+      },
+      "text": "Embarcadero met à disposition Delphi 13 Community Edition le 11 août 2026.",
+      "versionLabel": "13 Community Edition",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-ce13",
+          "sourceRevision": 1,
+          "locator": "Annonce d’ouverture, What’s New et Who Can Use",
+          "scope": "Édition publiée le 11 août 2026 et conditions de mise à disposition."
+        }
+      ]
+    }
+  ],
+  "technologies": [
+    {
+      "id": "flow-matic",
+      "label": "FLOW-MATIC",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "unverified",
+      "evidence": []
+    },
+    {
+      "id": "cobol",
+      "label": "COBOL",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "unverified",
+      "evidence": []
+    },
+    {
+      "id": "relationnel",
+      "label": "Modèle relationnel",
+      "kind": "concept",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-codd-1970",
+          "locator": "Notice ACM",
+          "scope": "Date de publication.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "sql",
+      "label": "SQL",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-selinger-1979",
+          "locator": "Résumé et §1",
+          "scope": "Le prototype est le système qui choisit un plan pour une requête SQL.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "entite-association",
+      "label": "Modèle entité-association",
+      "kind": "concept",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-chen-1976",
+          "locator": "En-tête, p. 9",
+          "scope": "Date de publication en revue.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "c",
+      "label": "C",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "unverified",
+      "evidence": []
+    },
+    {
+      "id": "cpp",
+      "label": "C++",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "unverified",
+      "evidence": []
+    },
+    {
+      "id": "perl",
+      "label": "Perl",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "unverified",
+      "evidence": []
+    },
+    {
+      "id": "borland-pascal",
+      "label": "Pascal objet de Turbo Pascal",
+      "kind": "product",
+      "aliases": [
+        "Borland Pascal objet"
+      ],
+      "revision": 2,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-borland-tp55",
+          "sourceRevision": 1,
+          "locator": "Chapitre 3, Object types, pp. 75–80",
+          "scope": "Déclarations object, héritage et méthodes virtuelles dans Turbo Pascal 5.5."
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "unverified",
+      "evidence": []
+    },
+    {
+      "id": "java",
+      "label": "Java",
+      "kind": "product",
+      "aliases": [],
+      "revision": 2,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-hejlsberg-csharp",
+          "sourceRevision": 1,
+          "locator": "Question sur ce que l’équipe a appris de Java",
+          "scope": "Hejlsberg cite Delphi, Java et C++ et précise les apports de Java."
+        }
+      ]
+    },
+    {
+      "id": "ruby",
+      "label": "Ruby",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "unverified",
+      "evidence": []
+    },
+    {
+      "id": "delphi",
+      "label": "Delphi",
+      "kind": "product",
+      "aliases": [
+        "Borland Delphi",
+        "Embarcadero Delphi"
+      ],
+      "revision": 2,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-equipe",
+          "sourceRevision": 1,
+          "locator": "Wayback Machine, Some Team Members et Brilliance",
+          "scope": "Équipe de 1995, cadre visuel Windows et langage Object Pascal de Borland."
+        }
+      ]
+    },
+    {
+      "id": "csharp",
+      "label": "C#",
+      "kind": "product",
+      "aliases": [
+        "C Sharp"
+      ],
+      "revision": 2,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-csharp-spec",
+          "sourceRevision": 1,
+          "locator": "Introduction, premier paragraphe",
+          "scope": "Identifie Hejlsberg, Wiltamuth et Golde comme principaux inventeurs."
+        }
+      ]
+    },
+    {
+      "id": "dotnet",
+      "label": ".NET",
+      "kind": "product",
+      "aliases": [
+        "Microsoft .NET"
+      ],
+      "revision": 2,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-csharp-2000",
+          "sourceRevision": 1,
+          "locator": "Communiqué du 26 juin 2000, premiers paragraphes",
+          "scope": "Microsoft annonce C# et le positionne sur la plateforme .NET."
+        }
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "kind": "product",
+      "aliases": [
+        "JS"
+      ],
+      "revision": 2,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-js-hopl",
+          "sourceRevision": 1,
+          "locator": "§1 et §3, JavaScript 1.0 and 1.1",
+          "scope": "Premier prototype conçu par Eich chez Netscape en 1995."
+        }
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "kind": "product",
+      "aliases": [
+        "TS"
+      ],
+      "revision": 2,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-hejlsberg-ts",
+          "sourceRevision": 1,
+          "locator": "Encadré biographique",
+          "scope": "Microsoft identifie Hejlsberg comme architecte principal de TypeScript."
+        }
+      ]
+    },
+    {
+      "id": "csv",
+      "label": "CSV",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "unverified",
+      "evidence": []
+    },
+    {
+      "id": "xml",
+      "label": "XML",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "unverified",
+      "evidence": []
+    },
+    {
+      "id": "yaml",
+      "label": "YAML",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "unverified",
+      "evidence": []
+    },
+    {
+      "id": "json",
+      "label": "JSON",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-rfc4627",
+          "locator": "Résumé et §1",
+          "scope": "Usage décrit en 2006, sans prétention de dater le premier usage.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "rust",
+      "label": "Rust",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "unverified",
+      "evidence": []
+    },
+    {
+      "id": "go",
+      "label": "Go",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "unverified",
+      "evidence": []
+    },
+    {
+      "id": "raii",
+      "label": "RAII",
+      "kind": "concept",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "unverified",
+      "evidence": []
+    },
+    {
+      "id": "typage-statique",
+      "label": "Typage statique",
+      "kind": "concept",
+      "aliases": [],
+      "revision": 2,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-pascal-rapport",
+          "sourceRevision": 1,
+          "locator": "Introduction et chapitre sur les types de données",
+          "scope": "Rapport de Wirth : structures de contrôle et types déclarés."
+        }
+      ]
+    },
+    {
+      "id": "sequel",
+      "label": "SEQUEL",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-sequel-1974",
+          "locator": "Première page et référence IBM SIGFIDET",
+          "scope": "Jalon de publication de SEQUEL.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "square",
+      "label": "SQUARE",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-sequel-1974",
+          "locator": "Références 13–14",
+          "scope": "Travaux de 1973 cités par les auteurs.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "system-r",
+      "label": "System R",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-selinger-1979",
+          "locator": "§1, Introduction",
+          "scope": "Organisation qui porte le prototype de recherche.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "modele-reseau",
+      "label": "Modèle réseau",
+      "kind": "concept",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-chen-1976",
+          "locator": "§1 et §4.2",
+          "scope": "Antécédent explicite de la distinction formalisée par Chen.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "postgresql",
+      "label": "PostgreSQL",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-pg92",
+          "locator": "§E.25.3.6, Data Types",
+          "scope": "Mise en œuvre concrète de l’usage de stockage.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "echange-donnees",
+      "label": "Échange de données",
+      "kind": "concept",
+      "aliases": [
+        "transport de données"
+      ],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-rfc4627",
+          "locator": "Résumé et §1",
+          "scope": "Usage décrit en 2006, sans prétention de dater le premier usage.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "stockage-donnees",
+      "label": "Stockage de données",
+      "kind": "concept",
+      "aliases": [
+        "persistance"
+      ],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-pg92",
+          "locator": "§E.25.3.6, Data Types",
+          "scope": "Usage de stockage attesté dans PostgreSQL 9.2, sans prétention de priorité.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "index-bdd",
+      "label": "Index de base de données",
+      "kind": "concept",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-selinger-1979",
+          "locator": "§2, The Research Storage System",
+          "scope": "Les index sont des chemins d’accès possibles pour le moteur.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "algol-w",
+      "label": "ALGOL W",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-wirth-projets",
+          "sourceRevision": 1,
+          "locator": "Pascal, 1968–72",
+          "scope": "Wirth présente ALGOL W comme base et précise ses objectifs de conception."
+        }
+      ]
+    },
+    {
+      "id": "pascal",
+      "label": "Pascal",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-pascal-rapport",
+          "sourceRevision": 1,
+          "locator": "Introduction et chapitre sur les types de données",
+          "scope": "Rapport de Wirth : structures de contrôle et types déclarés."
+        }
+      ]
+    },
+    {
+      "id": "turbo-pascal",
+      "label": "Turbo Pascal",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-embarcadero-turbo-delphi",
+          "sourceRevision": 1,
+          "locator": "Pre-Release Origins et Turbo Pascal 1.0",
+          "scope": "Compilation Pascal, licence Borland et environnement intégré."
+        }
+      ]
+    },
+    {
+      "id": "delphi-object-pascal",
+      "label": "Object Pascal de Delphi",
+      "kind": "product",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-equipe",
+          "sourceRevision": 1,
+          "locator": "Wayback Machine, Some Team Members et Brilliance",
+          "scope": "Équipe de 1995, cadre visuel Windows et langage Object Pascal de Borland."
+        }
+      ]
+    },
+    {
+      "id": "delphi-vcl",
+      "label": "Visual Component Library",
+      "kind": "product",
+      "aliases": [
+        "VCL"
+      ],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-vcl",
+          "sourceRevision": 1,
+          "locator": "Properties et Events",
+          "scope": "Réglage des propriétés et câblage d’un gestionnaire OnClick dans l’inspecteur d’objets."
+        }
+      ]
+    },
+    {
+      "id": "typage-structurel",
+      "label": "Typage structurel",
+      "kind": "concept",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-ts-compat",
+          "sourceRevision": 1,
+          "locator": "Premier exemple et paragraphe sur les objets anonymes",
+          "scope": "Les membres déterminent la compatibilité de base pour s’adapter aux pratiques JavaScript."
+        }
+      ]
+    },
+    {
+      "id": "composants-pme",
+      "label": "Composants à propriétés, méthodes et événements",
+      "kind": "concept",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-hejlsberg-2001",
+          "sourceRevision": 1,
+          "locator": "What was the reasoning behind C#? et How have you achieved that with C#?",
+          "scope": "Objectif de productivité et modèle propriétés, méthodes, événements avec event et delegate."
+        }
+      ]
+    },
+    {
+      "id": "execution-managee",
+      "label": "Exécution managée",
+      "kind": "concept",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-hejlsberg-2001",
+          "sourceRevision": 1,
+          "locator": "Is C# the native language of .NET?",
+          "scope": "Le runtime et ses bibliothèques visent plusieurs langages."
+        }
+      ]
+    },
+    {
+      "id": "probleme-enseigner-structurer",
+      "label": "Enseigner la programmation avec des structures et des types explicites",
+      "kind": "concept",
+      "aliases": [],
+      "role": "problem",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-wirth-projets",
+          "sourceRevision": 1,
+          "locator": "Pascal, 1968–72",
+          "scope": "Wirth présente ALGOL W comme base et précise ses objectifs de conception."
+        }
+      ]
+    },
+    {
+      "id": "probleme-cycle-edition-compilation",
+      "label": "Raccourcir le cycle édition, compilation et exécution",
+      "kind": "concept",
+      "aliases": [],
+      "role": "problem",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-embarcadero-turbo-delphi",
+          "sourceRevision": 1,
+          "locator": "Pre-Release Origins et Turbo Pascal 1.0",
+          "scope": "Compilation Pascal, licence Borland et environnement intégré."
+        }
+      ]
+    },
+    {
+      "id": "probleme-interfaces-windows",
+      "label": "Assembler rapidement des interfaces Windows réutilisables",
+      "kind": "concept",
+      "aliases": [],
+      "role": "problem",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-vcl",
+          "sourceRevision": 1,
+          "locator": "Properties et Events",
+          "scope": "Réglage des propriétés et câblage d’un gestionnaire OnClick dans l’inspecteur d’objets."
+        }
+      ]
+    },
+    {
+      "id": "probleme-integration-composants",
+      "label": "Simplifier la création et le branchement de composants logiciels",
+      "kind": "concept",
+      "aliases": [],
+      "role": "problem",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-hejlsberg-2001",
+          "sourceRevision": 1,
+          "locator": "What was the reasoning behind C#? et How have you achieved that with C#?",
+          "scope": "Objectif de productivité et modèle propriétés, méthodes, événements avec event et delegate."
+        }
+      ]
+    },
+    {
+      "id": "probleme-outiller-javascript",
+      "label": "Maintenir et faire évoluer de grandes bases JavaScript",
+      "kind": "concept",
+      "aliases": [],
+      "role": "problem",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-ts-10-ans",
+          "sourceRevision": 1,
+          "locator": "Récit du lancement et paragraphes sur la vérification et le comportement JavaScript",
+          "scope": "La taille des bases JavaScript motive la vérification, les outils d’édition et le maintien du comportement à l’exécution."
+        }
+      ]
+    },
+    {
+      "id": "probleme-compatibilite-javascript",
+      "label": "Adopter les types en conservant le comportement du code JavaScript",
+      "kind": "concept",
+      "aliases": [],
+      "role": "problem",
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-ts-erasure",
+          "sourceRevision": 1,
+          "locator": "Runtime Behavior et Erased Types",
+          "scope": "Le compilateur efface les annotations de type et préserve le comportement JavaScript."
+        }
+      ]
+    }
+  ],
+  "parties": [
+    {
+      "id": "hejlsberg",
+      "label": "Anders Hejlsberg",
+      "kind": "person",
+      "aliases": [],
+      "revision": 2,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-hejlsberg-ts",
+          "sourceRevision": 1,
+          "locator": "Encadré biographique",
+          "scope": "Microsoft identifie Hejlsberg comme architecte principal de TypeScript."
+        }
+      ]
+    },
+    {
+      "id": "hopper",
+      "label": "Grace Hopper",
+      "kind": "person",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "unverified",
+      "evidence": []
+    },
+    {
+      "id": "thompson",
+      "label": "Ken Thompson",
+      "kind": "person",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "unverified",
+      "evidence": []
+    },
+    {
+      "id": "codd",
+      "label": "Edgar F. Codd",
+      "kind": "person",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-codd-1970",
+          "locator": "Auteur et résumé",
+          "scope": "Attribution de la formalisation publiée à Codd.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "chamberlin",
+      "label": "Donald D. Chamberlin",
+      "kind": "person",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-sequel-1974",
+          "locator": "p. 249 et remerciements",
+          "scope": "Coattribution du langage décrit.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "boyce",
+      "label": "Raymond F. Boyce",
+      "kind": "person",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-sequel-1974",
+          "locator": "p. 249 et remerciements",
+          "scope": "Coattribution du langage décrit.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "chen",
+      "label": "Peter P. S. Chen",
+      "kind": "person",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-chen-1976",
+          "locator": "p. 9, résumé",
+          "scope": "Attribution de la formalisation publiée.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "ibm",
+      "label": "IBM",
+      "kind": "organization",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-selinger-1979",
+          "locator": "§1, Introduction",
+          "scope": "Organisation qui porte le prototype de recherche.",
+          "sourceRevision": 1
+        }
+      ]
+    },
+    {
+      "id": "wirth",
+      "label": "Niklaus Wirth",
+      "kind": "person",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-pascal-rapport",
+          "sourceRevision": 1,
+          "locator": "Introduction et chapitre sur les types de données",
+          "scope": "Rapport de Wirth : structures de contrôle et types déclarés."
+        }
+      ]
+    },
+    {
+      "id": "borland",
+      "label": "Borland",
+      "kind": "organization",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-equipe",
+          "sourceRevision": 1,
+          "locator": "Wayback Machine, Some Team Members et Brilliance",
+          "scope": "Équipe de 1995, cadre visuel Windows et langage Object Pascal de Borland."
+        }
+      ]
+    },
+    {
+      "id": "chuck-jazdzewski",
+      "label": "Chuck Jazdzewski",
+      "kind": "person",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-equipe",
+          "sourceRevision": 1,
+          "locator": "Wayback Machine, Some Team Members et Brilliance",
+          "scope": "Équipe de 1995, cadre visuel Windows et langage Object Pascal de Borland."
+        }
+      ]
+    },
+    {
+      "id": "microsoft",
+      "label": "Microsoft",
+      "kind": "organization",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-csharp-2000",
+          "sourceRevision": 1,
+          "locator": "Communiqué du 26 juin 2000, premiers paragraphes",
+          "scope": "Microsoft annonce C# et le positionne sur la plateforme .NET."
+        }
+      ]
+    },
+    {
+      "id": "scott-wiltamuth",
+      "label": "Scott Wiltamuth",
+      "kind": "person",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-csharp-spec",
+          "sourceRevision": 1,
+          "locator": "Introduction, premier paragraphe",
+          "scope": "Identifie Hejlsberg, Wiltamuth et Golde comme principaux inventeurs."
+        }
+      ]
+    },
+    {
+      "id": "peter-golde",
+      "label": "Peter Golde",
+      "kind": "person",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-csharp-spec",
+          "sourceRevision": 1,
+          "locator": "Introduction, premier paragraphe",
+          "scope": "Identifie Hejlsberg, Wiltamuth et Golde comme principaux inventeurs."
+        }
+      ]
+    },
+    {
+      "id": "brendan-eich",
+      "label": "Brendan Eich",
+      "kind": "person",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-js-hopl",
+          "sourceRevision": 1,
+          "locator": "§1 et §3, JavaScript 1.0 and 1.1",
+          "scope": "Premier prototype conçu par Eich chez Netscape en 1995."
+        }
+      ]
+    },
+    {
+      "id": "embarcadero",
+      "label": "Embarcadero",
+      "kind": "organization",
+      "aliases": [],
+      "revision": 1,
+      "maturity": "substantiated",
+      "evidence": [
+        {
+          "source": "src-delphi-ce13",
+          "sourceRevision": 1,
+          "locator": "Annonce d’ouverture, What’s New et Who Can Use",
+          "scope": "Édition publiée le 11 août 2026 et conditions de mise à disposition."
+        }
+      ]
+    }
+  ]
+}

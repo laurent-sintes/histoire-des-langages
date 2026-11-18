@@ -1,0 +1,468 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "0.4.0"
+    },
+    "parties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "revision": {
+            "$ref": "#/$defs/__schema1"
+          },
+          "maturity": {
+            "$ref": "#/$defs/__schema2"
+          },
+          "evidence": {
+            "$ref": "#/$defs/__schema3"
+          },
+          "label": {
+            "$ref": "#/$defs/__schema5"
+          },
+          "aliases": {
+            "$ref": "#/$defs/__schema6"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "person",
+              "organization"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "revision",
+          "maturity",
+          "evidence",
+          "label",
+          "aliases",
+          "kind"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "technologies": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/__schema0"
+              },
+              "revision": {
+                "$ref": "#/$defs/__schema1"
+              },
+              "maturity": {
+                "$ref": "#/$defs/__schema2"
+              },
+              "evidence": {
+                "$ref": "#/$defs/__schema3"
+              },
+              "label": {
+                "$ref": "#/$defs/__schema5"
+              },
+              "aliases": {
+                "$ref": "#/$defs/__schema6"
+              },
+              "kind": {
+                "type": "string",
+                "const": "product"
+              }
+            },
+            "required": [
+              "id",
+              "revision",
+              "maturity",
+              "evidence",
+              "label",
+              "aliases",
+              "kind"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/__schema0"
+              },
+              "revision": {
+                "$ref": "#/$defs/__schema1"
+              },
+              "maturity": {
+                "$ref": "#/$defs/__schema2"
+              },
+              "evidence": {
+                "$ref": "#/$defs/__schema3"
+              },
+              "label": {
+                "$ref": "#/$defs/__schema5"
+              },
+              "aliases": {
+                "$ref": "#/$defs/__schema6"
+              },
+              "kind": {
+                "type": "string",
+                "const": "concept"
+              },
+              "role": {
+                "type": "string",
+                "const": "problem"
+              }
+            },
+            "required": [
+              "id",
+              "revision",
+              "maturity",
+              "evidence",
+              "label",
+              "aliases",
+              "kind"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "revision": {
+            "$ref": "#/$defs/__schema1"
+          },
+          "title": {
+            "$ref": "#/$defs/__schema5"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "ai-prestudy",
+              "primary",
+              "academic",
+              "secondary"
+            ]
+          },
+          "consulted": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "note": {
+            "$ref": "#/$defs/__schema5"
+          },
+          "path": {
+            "$ref": "#/$defs/__schema5"
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https?:\\/\\/"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "id",
+          "revision",
+          "title",
+          "kind",
+          "consulted",
+          "note"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "assertions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "revision": {
+            "$ref": "#/$defs/__schema1"
+          },
+          "maturity": {
+            "$ref": "#/$defs/__schema2"
+          },
+          "evidence": {
+            "$ref": "#/$defs/__schema7"
+          },
+          "text": {
+            "$ref": "#/$defs/__schema5"
+          },
+          "subject": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "cataloging",
+              "technical",
+              "history",
+              "vitality",
+              "causality"
+            ]
+          },
+          "observedAt": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "scope": {
+            "$ref": "#/$defs/__schema5"
+          }
+        },
+        "required": [
+          "id",
+          "revision",
+          "maturity",
+          "evidence",
+          "text",
+          "subject",
+          "category"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "revision": {
+            "$ref": "#/$defs/__schema1"
+          },
+          "maturity": {
+            "$ref": "#/$defs/__schema2"
+          },
+          "evidence": {
+            "$ref": "#/$defs/__schema7"
+          },
+          "text": {
+            "$ref": "#/$defs/__schema5"
+          },
+          "from": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "to": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "created",
+              "influenced",
+              "supports",
+              "contributes-to",
+              "derived-from",
+              "inspired-by",
+              "inherits-from",
+              "resembles",
+              "implements",
+              "applies",
+              "succeeds",
+              "used-for",
+              "addresses"
+            ]
+          },
+          "period": {
+            "$ref": "#/$defs/__schema8"
+          }
+        },
+        "required": [
+          "id",
+          "revision",
+          "maturity",
+          "evidence",
+          "text",
+          "from",
+          "to",
+          "kind"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "revision": {
+            "$ref": "#/$defs/__schema1"
+          },
+          "maturity": {
+            "$ref": "#/$defs/__schema2"
+          },
+          "evidence": {
+            "$ref": "#/$defs/__schema7"
+          },
+          "text": {
+            "$ref": "#/$defs/__schema5"
+          },
+          "subject": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "date": {
+            "$ref": "#/$defs/__schema8"
+          },
+          "versionLabel": {
+            "$ref": "#/$defs/__schema5"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "design",
+              "publication",
+              "standardization",
+              "release",
+              "discontinuation",
+              "attestation",
+              "presentation"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "revision",
+          "maturity",
+          "evidence",
+          "text",
+          "subject",
+          "date",
+          "kind"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "version",
+    "parties",
+    "technologies",
+    "sources",
+    "assertions",
+    "relations",
+    "events"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "__schema0": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "__schema1": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "__schema2": {
+      "type": "string",
+      "enum": [
+        "unverified",
+        "substantiated",
+        "disputed",
+        "hypothesis"
+      ]
+    },
+    "__schema3": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/__schema4"
+      }
+    },
+    "__schema4": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "sourceRevision": {
+          "$ref": "#/$defs/__schema1"
+        },
+        "locator": {
+          "$ref": "#/$defs/__schema5"
+        },
+        "scope": {
+          "$ref": "#/$defs/__schema5"
+        }
+      },
+      "required": [
+        "source",
+        "sourceRevision",
+        "locator",
+        "scope"
+      ],
+      "additionalProperties": false
+    },
+    "__schema5": {
+      "type": "string",
+      "minLength": 1
+    },
+    "__schema6": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/__schema5"
+      }
+    },
+    "__schema7": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/__schema4"
+      }
+    },
+    "__schema8": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "integer",
+          "minimum": -9007199254740991,
+          "maximum": 9007199254740991
+        },
+        "end": {
+          "type": "integer",
+          "minimum": -9007199254740991,
+          "maximum": 9007199254740991
+        },
+        "precision": {
+          "type": "string",
+          "enum": [
+            "year",
+            "approximate",
+            "range"
+          ]
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "precision"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

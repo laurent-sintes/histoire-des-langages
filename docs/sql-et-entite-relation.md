@@ -1,0 +1,14 @@
+# De Codd à SQL et au modèle entité-relation
+
+Chen reconnaît que les modèles réseau distinguaient déjà, dans une certaine mesure, les entités et leurs associations. Il cite notamment les diagrammes de structure de données de Charles Bachman (1969) et le rapport CODASYL (1971). Son apport est de formaliser une représentation explicite des entités et des associations pour la conception des bases. [Chen, introduction et bibliographie](https://www.lancellotti.info/DataDesign/chen-1976-entity-relationship-model.pdf)
+
+| Date | Jalon | Apport |
+|---|---|---|
+| 1970 | [Modèle relationnel de Codd](https://doi.org/10.1145/362384.362685) | Représenter les données par des relations mathématiques, avec indépendance vis-à-vis du stockage physique. |
+| 1973–1974 | [SQUARE puis SEQUEL](https://s3.us.cloud-object-storage.appdomain.cloud/res-files/2705-sequel-1974.pdf) | Interroger des tables relationnelles. Avec SEQUEL, Chamberlin et Boyce reprennent les opérations de SQUARE dans une syntaxe à mots-clés. |
+| 1975–1976 | [Présentation à VLDB puis publication de Chen](https://www.lancellotti.info/DataDesign/chen-1976-entity-relationship-model.pdf) | Représenter les entités et leurs associations et expliciter le passage vers différents modèles, dont le relationnel. |
+| 1979 | [Article sur l'optimiseur de System R](https://doi.org/10.1145/582095.582099) | Pour une requête SQL, le moteur choisit les chemins d'accès aux données. |
+
+Prenons « un client passe des commandes ». En entité-relation, *passe* est l'association entre Client et Commande. Dans le modèle relationnel, les tables *Client* et *Commande* sont chacune une relation au sens mathématique. La colonne `client_id` dans *Commande* peut représenter leur association. Avec SQL, on demande les commandes d'un client. System R pouvait déjà choisir entre un balayage et un accès par index. Le moteur prend cette décision physique pour exécuter la requête. L'article de SEQUEL décrit dès 1974 un langage d'interrogation relationnel avec `SELECT … FROM … WHERE`. [Chen, §2 et §4.1](https://www.lancellotti.info/DataDesign/chen-1976-entity-relationship-model.pdf), [SEQUEL, caractéristiques de base](https://s3.us.cloud-object-storage.appdomain.cloud/res-files/2705-sequel-1974.pdf), [Selinger et al., §2 et exemple de jointure](https://web.eecs.umich.edu/~michjc/eecs584/Papers/selinger_1979.pdf)
+
+L'ordre de conception d'une base peut partir d'un diagramme entité-relation, passer par un schéma de tables et aboutir à une requête SQL. Dans l'histoire, les deux branches s'appuient sur le modèle relationnel de Codd. L'une mène à un langage de requête, l'autre à une synthèse conceptuelle qui aide à concevoir les bases. [SEQUEL, introduction](https://s3.us.cloud-object-storage.appdomain.cloud/res-files/2705-sequel-1974.pdf), [Chen, §1 et §4](https://www.lancellotti.info/DataDesign/chen-1976-entity-relationship-model.pdf)

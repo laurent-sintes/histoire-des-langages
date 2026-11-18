@@ -1,0 +1,94 @@
+name: Validation et publication
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Valider et fabriquer
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    outputs:
+      telemetry: ${{ steps.telemetry.outputs.artifact-id }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check
+      - run: pnpm test
+      - run: pnpm check:sources
+      - run: pnpm extract:pdf tmp/preetude-ci.txt
+      - run: pnpm build
+      - name: Préparer GitHub Pages
+        if: github.ref == 'refs/heads/main' && vars.PAGES_ENABLED == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: app/dist
+      - name: Conserver les mesures de la session
+        id: telemetry
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: performance-${{ github.run_attempt }}
+          path: tmp/performance/${{ github.sha }}
+          if-no-files-found: ignore
+          retention-days: 30
+
+  history:
+    name: Historiser les mesures et détecter les dérives
+    needs: verify
+    if: ${{ always() && github.ref == 'refs/heads/main' && needs.verify.outputs.telemetry != '' }}
+    permissions:
+      contents: write
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - uses: actions/download-artifact@v7
+        with:
+          artifact-ids: ${{ needs.verify.outputs.telemetry }}
+          path: tmp/ci-measures/${{ github.sha }}
+      - run: node tools/performance/archive.ts tmp/ci-measures "$GITHUB_SHA"
+
+  deploy:
+    name: Publier sur GitHub Pages
+    needs: verify
+    if: github.ref == 'refs/heads/main' && vars.PAGES_ENABLED == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    concurrency:
+      group: github-pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Vérifier que main pointe encore sur ce commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          latest="$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)"
+          if [ "$latest" = "$GITHUB_SHA" ]; then
+            echo 'publish=true' >> "$GITHUB_ENV"
+          fi
+      - name: Déployer
+        if: env.publish == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4

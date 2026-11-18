@@ -1,0 +1,69 @@
+import { corpusSchema, matchesEndpoint, PUBLIC_EVIDENCE_KINDS, PUBLIC_MATURITY, relationRules } from '../metamodel/model.ts';
+import type { Corpus, Period } from '../metamodel/model.ts';
+
+function validatePeriod(period: Period, id: string) {
+  if (period.start > period.end || (period.precision === 'year' && period.start !== period.end)) {
+    throw new Error(`Date incohérente : ${id}`);
+  }
+}
+
+export function validateCorpus(input: unknown): Corpus {
+  const result = corpusSchema.safeParse(input);
+  if (!result.success) {
+    throw new Error(result.error.issues.map(issue => `${issue.path.join('.')}: ${issue.message}`).join('\n'));
+  }
+  const corpus = result.data;
+  const { parties, technologies, sources, assertions, relations, events } = corpus;
+  const nodes = new Map([...parties, ...technologies].map(node => [node.id, node]));
+  // Les sources peuvent coexister avec plusieurs révisions pour préserver les citations.
+  const sourceIndex = new Map(sources.map(source => [`${source.id}@${source.revision}`, source]));
+  if (sourceIndex.size !== sources.length) throw new Error('Révision de source dupliquée');
+  const ids = new Set(sources.map(source => source.id));
+  for (const item of [...parties, ...technologies, ...assertions, ...relations, ...events]) {
+    if (ids.has(item.id)) throw new Error(`Identifiant dupliqué : ${item.id}`);
+    ids.add(item.id);
+    let supported = false;
+    for (const proof of item.evidence) {
+      const source = sourceIndex.get(`${proof.source}@${proof.sourceRevision}`);
+      if (!source) throw new Error(`Source ou révision inconnue : ${item.id} → ${proof.source}@${proof.sourceRevision}`);
+      supported ||= PUBLIC_EVIDENCE_KINDS.has(source.kind);
+    }
+    if (item.maturity === PUBLIC_MATURITY && !supported) throw new Error(`Preuve insuffisante : ${item.id}`);
+  }
+  for (const source of sources) {
+    if (!source.url && !source.path) throw new Error(`Localisation de source requise : ${source.id}`);
+    if (source.path && !source.sha256) throw new Error(`Empreinte de pièce locale requise : ${source.id}`);
+  }
+  function checkNode(id: string, owner: { id: string; maturity: string }) {
+    const node = nodes.get(id);
+    if (!node) throw new Error(`Nœud inconnu : ${owner.id} → ${id}`);
+    if (owner.maturity === PUBLIC_MATURITY && node.maturity !== PUBLIC_MATURITY) {
+      throw new Error(`Nœud à qualifier avant publication : ${owner.id} → ${id}`);
+    }
+    return node;
+  }
+  for (const item of relations) {
+    const from = checkNode(item.from, item);
+    const to = checkNode(item.to, item);
+    if (from === to) throw new Error(`Auto-relation : ${item.id}`);
+    const rule = relationRules[item.kind];
+    if (!matchesEndpoint(from, rule.from) || !matchesEndpoint(to, rule.to)) {
+      throw new Error(`Sens ou types de nœuds incompatibles : ${item.id} (${rule.from} → ${rule.to})`);
+    }
+    if (item.period) validatePeriod(item.period, item.id);
+  }
+  for (const item of events) {
+    checkNode(item.subject, item);
+    validatePeriod(item.date, item.id);
+    if ((item.kind === 'release') !== (item.versionLabel !== undefined)) {
+      throw new Error(`Libellé de version historique incohérent : ${item.id}`);
+    }
+  }
+  for (const item of assertions) {
+    checkNode(item.subject, item);
+    if ((item.category === 'vitality' || item.category === 'causality') && (!item.observedAt || !item.scope)) {
+      throw new Error(`Date et périmètre requis : ${item.id}`);
+    }
+  }
+  return corpus;
+}

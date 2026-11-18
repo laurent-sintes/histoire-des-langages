@@ -1,0 +1,32 @@
+{
+  "name": "histoire-des-langages",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.12.0"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "schema": "node tools/performance/run.ts schema tools/knowledge.ts schema",
+    "check": "pnpm build:model && node tools/performance/run.ts check-types node_modules/typescript/bin/tsc --noEmit && node tools/performance/run.ts check-model tools/knowledge.ts check",
+    "check:sources": "node tools/performance/run.ts check-sources tools/knowledge.ts check-sources",
+    "test": "node tools/performance/run.ts tests --test --test-isolation=none tools/knowledge.test.ts tools/performance/statistics.test.ts",
+    "build": "node tools/performance/run.ts build-site node_modules/vite/bin/vite.js build app --config app/vite.config.ts",
+    "build:model": "node tools/performance/run.ts build-model tools/knowledge.ts build",
+    "extract:pdf": "node tools/performance/run.ts extract-pdf tools/extract-pdf.ts",
+    "git:work": "node tools/git/delivery.ts"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "pdfjs-dist": "5.6.205",
+    "typescript": "5.9.3",
+    "vite": "7.3.7",
+    "zod": "4.1.13"
+  },
+  "dependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  }
+}

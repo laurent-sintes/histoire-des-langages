@@ -1,0 +1,7 @@
+node_modules/
+dist/
+app/dist/
+tmp/
+app/generated/
+__pycache__/
+*.pyc

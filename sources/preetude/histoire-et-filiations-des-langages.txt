@@ -1,0 +1,478 @@
+--- PAGE 1 ---
+HISTOIRE DES LANGAGES ET DES DONNÉES
+Histoire et filiations
+des langages et des
+modèles de données
+De FLOW-MATIC à TypeScript, 22 fiches pour retrouver les dates, les idées
+héritées et la façon dont chaque langage, format ou modèle s’utilise.
+Sommaire
+Les débuts de l’informatique de gestion
+2
+FLOW-MATIC et COBOL
+Modéliser et interroger les données
+3
+Modèle relationnel, SQL et modèle entité-association
+Des langages d’Unix à l’automatisation
+4
+C, C++ et Perl
+Objets et langages généralistes
+5
+Borland Pascal objet, Python, Java et Ruby
+Applications Windows et .NET
+6
+Delphi et C# / .NET
+Les langages du Web
+7
+JavaScript et TypeScript
+Échanger et configurer
+8
+CSV, XML, YAML et JSON
+Mémoire et concurrence
+9
+Rust et Go
+Chronologie récapitulative
+10
+Deux parcours à suivre
+Anders Hejlsberg relie Turbo Pascal, Delphi, C# et TypeScript. Ken Thompson relie B, le
+prédécesseur du C de Dennis Ritchie, à Go. Leurs parcours aident à situer les influences d’une
+génération de langages à l’autre.
+Histoire et filiations
+1 / 10
+
+
+--- PAGE 2 ---
+HISTOIRE DES LANGAGES ET DES DONNÉES
+Les débuts de l’informatique de gestion
+v. 1955
+FLOW-MATIC
+Langage de gestion
+Grace Hopper et son équipe conçoivent B-0 pour les ordinateurs UNIVAC. Renommé FLOW-MATIC, le
+langage rend les traitements sur fichiers plus faciles à exprimer avec des instructions proches de
+l’anglais.
+Filiation · Il prolonge les travaux de Hopper sur la programmation automatique et inspire directement
+COBOL, notamment dans sa façon de décrire les données et de nommer les opérations.
+Exemple d’usage : lire des enregistrements de ventes, calculer un total, puis produire un fichier de résultats.
+Archives historiques de l’Inria
+1959
+COBOL
+Langage de gestion
+Conçu en comité à partir de 1959, COBOL reçoit sa première spécification en 1960. Ses divisions
+distinguent notamment la description des données et la procédure. Les descriptions d’enregistrements et
+les nombres décimaux à précision déclarée conviennent aux traitements financiers et administratifs.
+Filiation · FLOW-MATIC fournit une grande partie de l’inspiration initiale. COMTRAN, proposé par IBM,
+apporte aussi des éléments. La portabilité entre machines de différents constructeurs est un objectif
+fondateur.
+ ADD MONTANT TO TOTAL
+DISPLAY TOTAL
+Computer History Museum · Inria
+Le traitement par lots
+Un programme peut lire un fichier de ventes, regrouper les opérations par client et produire un
+relevé. Ce type de traitement a motivé des langages capables d’exprimer clairement des opérations
+sur des enregistrements et des montants.
+Histoire et filiations
+2 / 10
+
+
+--- PAGE 3 ---
+HISTOIRE DES LANGAGES ET DES DONNÉES
+Modéliser et interroger les données
+1970
+Modèle relationnel
+Modèle de données
+Edgar F. Codd publie chez IBM un modèle fondé sur les relations mathématiques. Une relation réunit des
+tuples définis par des attributs. La représentation tabulaire rend le modèle intuitif, tandis que la
+sélection, la projection et la jointure permettent de raisonner sur les données indépendamment de leur
+stockage physique.
+Filiation · Le modèle relationnel fonde les travaux d’IBM sur SEQUEL. Le SQL des bases du marché
+possède aussi ses propres conventions, comme les doublons possibles dans un résultat sans DISTINCT.
+Exemple : COMMANDE(id, client_id) relie chaque commande à CLIENT(id, nom) au moyen d’une clé étrangère.
+Article fondateur de Codd · Histoire d’IBM
+1974
+SQL
+Langage de bases de données
+Donald Chamberlin et Raymond Boyce publient SEQUEL chez IBM en 1974. La première implémentation
+commerciale de SQL est lancée en 1979 par la société qui deviendra Oracle. SQL sert notamment à
+déclarer le schéma, interroger les données et les modifier.
+Filiation · SEQUEL, devenu SQL, est conçu pour exploiter le modèle relationnel de Codd. Une requête
+décrit le résultat attendu. Le moteur choisit un plan d’exécution et les structures d’accès à utiliser.
+ SELECT c.nom, COUNT(*) AS nb_commandes
+FROM client c JOIN commande o ON o.client_id = c.id
+GROUP BY c.id, c.nom;
+Article SEQUEL chez IBM · Oracle, histoire de SQL
+1976
+Modèle entité-association
+Modèle conceptuel
+Peter Chen publie son article sur le modèle Entity–Relationship en 1976. On y représente des entités du
+domaine, leurs attributs et les associations entre elles. Les cardinalités décrivent les associations
+possibles entre occurrences.
+Filiation · Chen cherche à rapprocher les modèles relationnel, réseau et à ensembles d’entités. Lors du
+passage à un schéma relationnel, une association un-à-plusieurs se traduit souvent par une clé étrangère
+et une association plusieurs-à-plusieurs par une table de liaison.
+Exemple : une commande appartient à un client. Un client peut passer zéro à plusieurs commandes.
+Article original de Peter Chen
+Une même commande à trois niveaux
+Conceptuel : un client passe des commandes. Relationnel : la table COMMANDE référence CLIENT
+par une clé étrangère. SQL : une jointure et un regroupement calculent le nombre de commandes
+par client.
+Histoire et filiations
+3 / 10
+
+
+--- PAGE 4 ---
+HISTOIRE DES LANGAGES ET DES DONNÉES
+Des langages d’Unix à l’automatisation
+1972
+C
+Langage système
+Dennis Ritchie développe C aux Bell Labs au début des années 1970 avec Unix. Il retient 1972 comme
+l’année la plus féconde. Le livre de Kernighan et Ritchie paraît en 1978 et diffuse le langage. C permet de
+manipuler les adresses avec des pointeurs et laisse au programme la responsabilité des allocations
+dynamiques.
+Filiation · BCPL inspire B, conçu par Ken Thompson. Ritchie fait évoluer B vers un langage doté de types.
+C devient ensuite la base de C++ et un modèle syntaxique pour plusieurs autres langages.
+ int total(int prix, int quantite) {
+    return prix * quantite;
+}
+Dennis Ritchie, histoire du C
+1979
+C++
+Langage généraliste et système
+Bjarne Stroustrup commence C with Classes en 1979. Le nom C++ date de 1983 et une première
+diffusion externe a lieu en 1985. Le langage combine types et classes, programmation générique par
+templates et contrôle de la durée de vie des objets.
+Filiation · C fournit la base. Simula 67 inspire le modèle de classes. La gestion des ressources par la
+durée de vie d’un objet, appelée RAII, lie par exemple la possession d’un fichier à un objet dont le
+destructeur libère la ressource.
+ std::ifstream fichier("ventes.csv");
+// Le flux est fermé à la destruction de fichier.
+Bjarne Stroustrup, chronologie et influences
+1987
+Perl
+Langage de script
+Larry Wall publie Perl 1.0 le 18 décembre 1987. Perl facilite la manipulation de fichiers texte et
+l’automatisation sous Unix. Les expressions régulières intégrées permettent de chercher et transformer
+des motifs directement dans le langage.
+Filiation · Perl combine des idées de C, du shell Bourne, d’awk et de sed. Ses fonctions de traitement de
+texte influencent Ruby, et ses structures de données font partie des références de YAML.
+ while (<>) {
+    print if /^Commande/;
+}
+Historique officiel de Perl · Université de Princeton
+Histoire et filiations
+4 / 10
+
+
+--- PAGE 5 ---
+HISTOIRE DES LANGAGES ET DES DONNÉES
+Objets et langages généralistes
+1989
+Borland Pascal objet
+Langage et outils
+Turbo Pascal 5.5 introduit les objets chez Borland en 1989 avec les types objet, l’héritage, les
+constructeurs et les destructeurs. En 1992, Borland propose notamment l’édition professionnelle Borland
+Pascal 7.0.
+Filiation · La lignée remonte à Pascal puis à Turbo Pascal. Le mot-clé object désigne ici un type à
+sémantique de valeur qui peut être déclaré localement ou alloué dynamiquement. Apple documentait
+dès 1985 une autre lignée sous le nom Object Pascal.
+ type TCommande = object
+  Quantite: Integer;
+end;
+Embarcadero, historique · Document Apple de 1985
+1989
+Python
+Langage généraliste
+Guido van Rossum lance l’implémentation en décembre 1989 et la publie sur Usenet en février 1991.
+Python privilégie une syntaxe lisible, un typage dynamique et des structures natives de haut niveau
+comme les listes et les dictionnaires.
+Filiation · ABC inspire l’indentation structurante et les types de haut niveau. Modula-3 inspire les
+exceptions. YAML adopte ensuite une organisation des blocs par indentation comparable à celle de
+Python.
+ for commande in commandes:
+    total += commande["quantite"]
+Python, FAQ historique · Spécification YAML 1.0
+1991
+Java
+Langage généraliste
+James Gosling crée Oak chez Sun en 1991. Sun présente publiquement Java en 1995. Le modèle
+historique compile le code vers du bytecode exécuté par la JVM, qui assure notamment la gestion
+automatique de la mémoire et peut compiler du code à la volée.
+Filiation · Oak devient Java. La syntaxe est familière aux utilisateurs de C et C++. La JVM, les références
+gérées et le modèle de classes de Java constituent des choix structurants pour la plateforme.
+ record Commande(String produit, int quantite) {}
+// Exemple moderne, avec les records de Java.
+Oracle, histoire de Java · Spécification Java
+1993
+Ruby
+Langage de script
+Yukihiro Matsumoto, dit Matz, commence Ruby en 1993 et le publie en 1995. Ruby privilégie une
+approche où les valeurs sont des objets, avec des blocs permettant d’exprimer directement des
+opérations sur des collections.
+Filiation · Perl inspire le traitement du texte. Smalltalk nourrit l’approche objet. Matz cite aussi Eiffel,
+Ada et Lisp. Ruby fait partie des langages dont les structures inspirent le modèle de données de YAML.
+ total = commandes.sum { |c| c[:quantite] }
+Présentation officielle de Ruby · Notes de l’UQAM
+Histoire et filiations
+5 / 10
+
+
+--- PAGE 6 ---
+HISTOIRE DES LANGAGES ET DES DONNÉES
+Applications Windows et .NET
+1995
+Delphi
+Langage et environnement RAD
+Delphi 1 sort le 14 février 1995 pour Windows. Borland associe son langage Pascal objet à un compilateur
+natif et à un concepteur visuel d’interfaces. La bibliothèque VCL permet de composer des formulaires à
+partir de composants et de traiter leurs événements.
+Filiation · Delphi prolonge directement le Pascal objet de Borland. Les types historiques object et les
+record peuvent avoir une sémantique de valeur. Une variable de type class contient une référence vers
+une instance. Cette distinction explique les souvenirs d’objets locaux et la différence avec les instances
+de classe.
+ Commande := TCommande.Create;
+try
+  Commande.Valider;
+finally
+  Commande.Free;
+end;
+Embarcadero, historique · Documentation sur les types Delphi
+2000
+C# / .NET
+Langage et plateforme
+Microsoft dévoile C# en juin 2000 et en diffuse une préversion en juillet. .NET Framework 1.0 sort en
+février 2002. C# est le langage. .NET fournit l’environnement d’exécution et les bibliothèques. Dans le
+modèle historique, le code est compilé en langage intermédiaire et exécuté par le CLR.
+Filiation · C# relève de la famille syntaxique de C et C++ et partage plusieurs choix avec Java. Anders
+Hejlsberg a également travaillé sur Delphi, dont certaines idées ont nourri la conception de C#.
+ public record Commande(string Produit, int Quantite);
+// Syntaxe des records introduite après C# 1.0.
+Microsoft, spécification C# · Historique .NET · Entretien Hejlsberg
+Durée de vie et libération des ressources
+En Delphi, try/finally garantit l’appel à Free pour l’instance de classe dans cet exemple. En C#, le
+CLR récupère la mémoire des objets gérés. Le mot-clé using sert à garantir la libération des
+ressources détenues par un objet jetable.
+Histoire et filiations
+6 / 10
+
+
+--- PAGE 7 ---
+HISTOIRE DES LANGAGES ET DES DONNÉES
+Les langages du Web
+1995
+JavaScript
+Langage généraliste
+Brendan Eich réalise le prototype Mocha chez Netscape en mai 1995. L’implémentation apparaît en bêta
+sous le nom LiveScript, puis le nom JavaScript est annoncé en décembre. ECMAScript devient le nom du
+standard, dont la première édition paraît en 1997.
+Filiation · Les fonctions de première classe rappellent Scheme, les prototypes rappellent Self et la
+syntaxe emprunte à Java et à la famille C. JavaScript sert de base à TypeScript, et sa syntaxe de littéraux
+inspire JSON.
+ const commande = { produit: "T-shirt", quantite: 3 };
+const quantites = commandes.map(c => c.quantite);
+Brendan Eich et Allen Wirfs-Brock, histoire du langage
+2012
+TypeScript
+Langage dérivé de JavaScript
+Microsoft publie TypeScript 0.8 en octobre 2012 puis TypeScript 1.0 en avril 2014. TypeScript ajoute une
+vérification statique et de l’inférence à JavaScript. Les annotations et interfaces du langage sont effacées
+lors de la compilation.
+Filiation · JavaScript fournit la syntaxe et le comportement à l’exécution. Anders Hejlsberg, figure
+centrale de Turbo Pascal, Delphi et C#, devient l’architecte principal de TypeScript. Les types n’assurent
+pas automatiquement la validation d’un JSON reçu à l’exécution.
+ type Commande = { produit: string; quantite: number };
+const commande: Commande = { produit: "T-shirt", quantite: 3 };
+Site officiel de TypeScript · Annonce de la version 1.0 · Profil Hejlsberg
+Le contrôle des types et les données reçues
+Une déclaration TypeScript aide à vérifier le code qui manipule une commande. Pour garantir qu’un
+message JSON contient une quantité numérique, il faut aussi valider les données à leur arrivée.
+Histoire et filiations
+7 / 10
+
+
+--- PAGE 8 ---
+HISTOIRE DES LANGAGES ET DES DONNÉES
+Échanger et configurer
+Années 1970
+CSV
+Format tabulaire
+Des formats à champs séparés par des virgules sont attestés dans les années 1970. En 2005, le RFC
+4180 documente une convention commune, dont les guillemets pour entourer un champ contenant une
+virgule. Les exportateurs peuvent adopter d’autres séparateurs et conventions.
+Filiation · CSV émerge des pratiques d’échange de données tabulaires en texte. Son origine précise est
+incertaine. Le fichier représente des lignes et des champs. Le schéma, les types et les relations relèvent
+généralement du système qui l’importe.
+ produit,quantite
+"T-shirt, bleu",3
+RFC 4180 · Repères historiques
+1996
+XML
+Langage de balisage
+Le W3C lance le projet en 1996 et publie XML 1.0 comme recommandation le 10 février 1998. XML
+structure les documents avec des éléments et des attributs. Les espaces de noms et les schémas sont
+des mécanismes définis par des spécifications complémentaires.
+Filiation · XML est un sous-ensemble simplifié de SGML conçu pour le Web. Il peut représenter des
+documents avec texte et balises mêlés, ainsi que des messages d’échange entre systèmes.
+ <commande id="42"><quantite>3</quantite></commande>
+W3C, historique du projet · Recommandation XML 1.0
+2001
+YAML
+Format de sérialisation
+Premier brouillon public en 2001 et spécification 1.0 en 2004. YAML représente des données structurées
+avec des scalaires, des séquences et des associations clé-valeur. L’indentation peut rendre la structure
+lisible dans des fichiers de configuration.
+Filiation · L’indentation rappelle Python et le modèle de données s’inspire de structures courantes en
+Perl, Python et Ruby. La version 1.2, parue en 2009, vise la compatibilité syntaxique avec JSON.
+ commande:
+  produit: T-shirt
+  quantite: 3
+Premier brouillon YAML · Spécification 1.0 · Spécification 1.2
+v. 2001
+JSON
+Format d’échange
+Douglas Crockford situe les premiers usages de son projet en 2001 et documente le format dans le RFC
+4627 en 2006. Le RFC 8259 décrit aujourd’hui la grammaire de référence. JSON représente objets,
+tableaux, chaînes, nombres, booléens et null.
+Filiation · JSON reprend une partie de la notation des littéraux JavaScript pour représenter des données.
+Le format s’emploie indépendamment de JavaScript, par exemple pour les API. Un nombre JSON peut être
+interprété avec une précision différente selon le lecteur.
+ {"produit":"T-shirt","quantite":3}
+Récit de Douglas Crockford · RFC 4627 · RFC 8259
+Histoire et filiations
+8 / 10
+
+
+--- PAGE 9 ---
+HISTOIRE DES LANGAGES ET DES DONNÉES
+Mémoire et concurrence
+2006
+Rust
+Langage système
+Graydon Hoare lance Rust comme projet personnel en 2006. Rust 1.0 sort le 15 mai 2015. Le compilateur
+vérifie les règles de propriété et d’emprunt, et l’analyse des durées de vie garantit la validité des
+références dans le code sûr.
+Filiation · C++ inspire notamment le RAII et la sémantique de déplacement. SML et OCaml apportent les
+types algébriques et le filtrage par motif. La référence officielle mentionne également Cyclone et ML Kit
+pour la gestion de la mémoire par régions.
+ let produit = String::from("T-shirt");
+let emprunt = &produit;
+println!("{emprunt}");
+CNRS, repères historiques · Rust 1.0 · Référence Rust, influences
+2007
+Go
+Langage généraliste
+Robert Griesemer, Rob Pike et Ken Thompson commencent la conception chez Google en 2007. Le projet
+devient public en 2009 et Go 1 paraît en 2012. Go associe compilation native, ramasse-miettes,
+goroutines et canaux.
+Filiation · La syntaxe de base vient de la famille C, les déclarations et packages portent la marque de
+Pascal, Modula et Oberon. Newsqueak et Limbo, inspirés de CSP, influencent la concurrence. Ken
+Thompson avait auparavant conçu B.
+ resultats := make(chan int)
+go func() { resultats <- 3 }()
+quantite := <-resultats
+FAQ officielle de Go · Historique du C et de B
+Deux choix de conception
+Rust applique des règles de propriété et d’emprunt vérifiées à la compilation. Go s’appuie sur un
+ramasse-miettes et met en avant la coordination par goroutines et canaux. La référence de Rust et
+la FAQ de Go citent toutes deux Newsqueak et Limbo parmi leurs influences sur la concurrence.
+Histoire et filiations
+9 / 10
+
+
+--- PAGE 10 ---
+HISTOIRE DES LANGAGES ET DES DONNÉES
+Chronologie récapitulative
+Les dates indiquent le début connu du projet, sa première publication ou, selon le cas, le jalon historique
+retenu. Les fiches précisent le sens de chaque date.
+Date
+Entrée
+Type
+Page
+v. 1955
+FLOW-MATIC
+Langage de gestion
+2
+1959
+COBOL
+Langage de gestion
+2
+1970
+Modèle relationnel
+Modèle de données
+3
+1972
+C
+Langage système
+4
+Années 1970
+CSV
+Format tabulaire
+8
+1974
+SQL
+Langage de bases de données
+3
+1976
+Modèle entité-association
+Modèle conceptuel
+3
+1979
+C++
+Langage généraliste et système
+4
+1987
+Perl
+Langage de script
+4
+1989
+Borland Pascal objet
+Langage et outils
+5
+1989
+Python
+Langage généraliste
+5
+1991
+Java
+Langage généraliste
+5
+1993
+Ruby
+Langage de script
+5
+1995
+Delphi
+Langage et environnement RAD
+6
+1995
+JavaScript
+Langage généraliste
+7
+1996
+XML
+Langage de balisage
+8
+2000
+C# / .NET
+Langage et plateforme
+6
+2001
+YAML
+Format de sérialisation
+8
+v. 2001
+JSON
+Format d’échange
+8
+2006
+Rust
+Langage système
+9
+2007
+Go
+Langage généraliste
+9
+2012
+TypeScript
+Langage dérivé de JavaScript
+7
+Histoire et filiations
+10 / 10
