@@ -2,6 +2,7 @@ node_modules/
 dist/
 app/dist/
 tmp/
+.cache/
 app/generated/
 __pycache__/
 *.pyc

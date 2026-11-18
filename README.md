@@ -17,6 +17,7 @@ Comprendre comment les idées circulent entre langages, personnes, organisations
 - [Livraison Git et GitHub Pages](docs/livraison.md)
 - [Versions du métamodèle, du modèle et de l’application](docs/versioning.md)
 - [Historique et dérives de performance](docs/performance.md)
+- [Audits et plans de refactorisation](audit/README.md)
 - [Données initiales](source/connaissances.json) et [schéma](source/schema-connaissances.json)
 
 ## Organisation
@@ -26,12 +27,13 @@ Comprendre comment les idées circulent entre langages, personnes, organisations
 | `sources/` | Pièces reçues, conservées sans réécriture |
 | `source/` | Connaissance structurée, assertions et preuves |
 | `docs/` | Vision, méthode et décisions d'architecture |
+| `audit/` | Constats techniques, plans de refactorisation et points de reprise |
 | `packages/metamodel/` | Métamodèle autonome et règles du graphe |
 | `packages/contracts/` | Contrat du modèle compilé et API navigateur |
 | `packages/compiler/` | Validation et compilation du graphe publiable |
 | `app/` | Site React statique et modèle compilé |
 | `tools/` | Commandes TypeScript de validation, fabrication et extraction |
-| `skills/` | Procédures Codex pour le modèle et le métamodèle |
+| `.agents/skills/` | Procédures Codex pour la connaissance, les audits et la livraison |
 
 Les assertions issues de la seule préétude restent **à vérifier**. Les parcours documentés et les usages de JSON disposent de liens étayés.
 
@@ -39,6 +41,6 @@ Les assertions issues de la seule préétude restent **à vérifier**. Les parco
 
 Avec Node.js 24.12 ou plus récent et pnpm, lancer `pnpm install --frozen-lockfile`, puis `pnpm check`, `pnpm test` et `pnpm build`. On obtient le site statique dans `app/dist`. Les outils consignent leurs mesures de performance par commit.
 
-- [Entretenir le corpus](skills/langages-entretenir-modele/SKILL.md)
-- [Faire évoluer le métamodèle](skills/langages-faire-evoluer-metamodele/SKILL.md)
+- [Entretenir le corpus](.agents/skills/langages-entretenir-modele/SKILL.md)
+- [Faire évoluer le métamodèle](.agents/skills/langages-faire-evoluer-metamodele/SKILL.md)
 - [Commandes et contrôles](tools/README.md)

@@ -5,7 +5,7 @@ description: Enrichir ou corriger le graphe Histoire des langages avec des acteu
 
 # Entretenir le modèle
 
-Depuis la racine, lire [la méthode](../../docs/methode.md) et [le modèle](../../docs/modele-connaissance.md). Travailler dans `source/connaissances.json` et conserver les pièces reçues dans `sources/`.
+Depuis la racine, lire [la méthode](../../../docs/methode.md) et [le modèle](../../../docs/modele-connaissance.md). Travailler dans `source/connaissances.json` et conserver les pièces reçues dans `sources/`.
 
 1. Rechercher les identifiants et alias existants. Ajouter des liens orientés et préciser le rôle, l'idée transmise ou l'usage attesté. Pour une même technologie, plusieurs usages peuvent coexister.
 2. Attacher la preuve au nœud, à l'arête, au jalon ou à l'assertion qu'elle soutient. Réutiliser la référence bibliographique exacte `source@sourceRevision`, en précisant passage et portée. Ajouter une révision de source lorsque le document de référence change.

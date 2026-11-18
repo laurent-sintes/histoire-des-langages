@@ -430,10 +430,7 @@
     },
     "__schema7": {
       "minItems": 1,
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/__schema4"
-      }
+      "$ref": "#/$defs/__schema3"
     },
     "__schema8": {
       "type": "object",

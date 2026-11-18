@@ -5,7 +5,7 @@ description: Faire évoluer le contrat du graphe Histoire des langages, notammen
 
 # Faire évoluer le métamodèle
 
-Lire [les invariants du projet](../../AGENTS.md), [le modèle](../../docs/modele-connaissance.md) et [l'architecture](../../docs/architecture.md). Déclarer la structure, le vocabulaire anglais et les signatures de relations dans `packages/metamodel/model.ts`. Le validateur applique ces règles au corpus. Régénérer le JSON Schema avec `pnpm schema`.
+Lire [les invariants du projet](../../../AGENTS.md), [le modèle](../../../docs/modele-connaissance.md) et [l'architecture](../../../docs/architecture.md). Déclarer la structure, le vocabulaire anglais et les signatures de relations dans `packages/metamodel/model.ts`. Le validateur applique ces règles au corpus. Régénérer le JSON Schema avec `pnpm schema`.
 
 - Tester le besoin sur des cas contrastés du corpus avant d'ajouter un type ou un attribut. Relier un usage par `used-for` et une réponse à un problème sourcé par `addresses` vers un `concept` de rôle `problem`.
 - Pour une rupture de contrat, mettre à jour la version du métamodèle et migrer le corpus en gardant identifiants, révisions et références probantes. Versionner aussi le format public si sa représentation ou sa lecture devient incompatible. En cas de changement sémantique d'un objet, réviser cet objet et réexaminer la portée de ses preuves.

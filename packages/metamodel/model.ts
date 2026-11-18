@@ -23,6 +23,8 @@ export const relationRules = {
   addresses: { from: 'technology', to: 'problem' },
 } as const satisfies Record<string, RelationRule>;
 
+export const DESCENT_RELATIONS: ReadonlySet<keyof typeof relationRules> = new Set(['derived-from', 'inherits-from']);
+
 const relationKinds = Object.keys(relationRules) as (keyof typeof relationRules)[];
 const id = z.string().regex(/^[a-z][a-z0-9-]*$/);
 const text = z.string().min(1);

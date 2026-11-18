@@ -1,9 +1,42 @@
-import { corpusSchema, matchesEndpoint, PUBLIC_EVIDENCE_KINDS, PUBLIC_MATURITY, relationRules } from '../metamodel/model.ts';
+import { corpusSchema, DESCENT_RELATIONS, matchesEndpoint, PUBLIC_EVIDENCE_KINDS, PUBLIC_MATURITY, relationRules } from '../metamodel/model.ts';
 import type { Corpus, Period } from '../metamodel/model.ts';
 
 function validatePeriod(period: Period, id: string) {
   if (period.start > period.end || (period.precision === 'year' && period.start !== period.end)) {
     throw new Error(`Date incohérente : ${id}`);
+  }
+}
+
+function validateDescent(relations: Corpus['relations']) {
+  const parents = new Map<string, string[]>();
+  for (const relation of relations) {
+    if (!DESCENT_RELATIONS.has(relation.kind)) continue;
+    const direct = parents.get(relation.from) ?? [];
+    direct.push(relation.to);
+    parents.set(relation.from, direct);
+  }
+
+  const checked = new Set<string>();
+  const inPath = new Set<string>();
+  for (const start of parents.keys()) {
+    if (checked.has(start)) continue;
+    const stack = [{ id: start, rest: parents.get(start)!.values() }];
+    inPath.add(start);
+    while (stack.length) {
+      const frame = stack.at(-1)!;
+      const next = frame.rest.next();
+      if (next.done) {
+        checked.add(frame.id);
+        inPath.delete(frame.id);
+        stack.pop();
+      } else if (inPath.has(next.value)) {
+        const cycle = stack.slice(stack.findIndex(item => item.id === next.value)).map(item => item.id);
+        throw new Error(`Cycle de descendance : ${[...cycle, next.value].join(' → ')}`);
+      } else if (!checked.has(next.value)) {
+        inPath.add(next.value);
+        stack.push({ id: next.value, rest: (parents.get(next.value) ?? []).values() });
+      }
+    }
   }
 }
 
@@ -52,6 +85,7 @@ export function validateCorpus(input: unknown): Corpus {
     }
     if (item.period) validatePeriod(item.period, item.id);
   }
+  validateDescent(relations);
   for (const item of events) {
     checkNode(item.subject, item);
     validatePeriod(item.date, item.id);

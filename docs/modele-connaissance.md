@@ -38,6 +38,8 @@ Formuler un problème en termes de besoin ou de contrainte, par exemple « Maint
 
 Ne pas déduire A → C du seul chemin A → B → C. Plusieurs parents sont autorisés. Une contribution commune ne prouve pas qu'une idée a été transférée. La future vue peut inverser les flèches pour lire chronologiquement, en conservant la sémantique du contrat.
 
+Les relations de descendance `derived-from` et `inherits-from` forment ensemble un graphe acyclique. Une influence réciproque étayée peut être représentée par deux liens `inspired-by`.
+
 ## Maturité, révisions et preuves
 
 Chaque acteur, technologie, arête, assertion et événement porte `maturity`, `revision` et `evidence`. La maturité vaut `unverified`, `substantiated`, `disputed` ou `hypothesis`. Une citation indique directement `source`, `sourceRevision`, `locator` et `scope`. Une source bibliographique peut avoir plusieurs révisions simultanément pour que les anciennes citations gardent leur sens. Une pièce locale porte une empreinte SHA-256 dans sa notice révisée.

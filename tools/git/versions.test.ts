@@ -1,14 +1,9 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
-import { after, test } from 'node:test';
-import { affectedComponents, components, increment, parseBumps, parseComponentVersion, planVersions, testFiles } from './versions.ts';
-import type { Component, Versions } from './versions.ts';
-import { parseTestSuite, testImpact } from './test-impact.ts';
+import { test } from 'node:test';
+import { affectedComponents, increment, parseBumps, parseComponentVersion, planVersions } from './versions.ts';
+import type { Versions } from './versions.ts';
+import { testImpact } from './test-impact.ts';
 import type { TestSuites } from './test-impact.ts';
-import { relationRules } from '../../packages/metamodel/model.ts';
-import { compileKnowledge } from '../../packages/compiler/compile.ts';
-import { readCorpus } from '../../packages/compiler/build.ts';
-import appConfig, { releasedVersionsAsset } from '../../app/vite.config.ts';
 
 const current: Versions = { metamodel: '1.3.4', model: '2.5.8', application: '3.6.7' };
 
@@ -19,39 +14,12 @@ test('les compteurs de version repartent à 1 et refusent zéro', () => {
   assert.throws(() => parseComponentVersion('{"version":"1.0.1"}'), /entiers positifs/);
 });
 
-const suites = Object.fromEntries(components.map(module => [
-  module, parseTestSuite(readFileSync(new URL(`../../${testFiles[module]}`, import.meta.url), 'utf8')),
-])) as TestSuites;
-const executed = new Set<string>();
-function expected(module: Component, id: string) {
-  const descriptor = suites[module][id];
-  assert.ok(descriptor, `Test absent du catalogue : ${module}/${id}`);
-  executed.add(`${module}/${id}`);
-  return descriptor.expected;
-}
-after(() => {
-  const declared = components.flatMap(module => Object.keys(suites[module]).map(id => `${module}/${id}`));
-  assert.deepEqual([...executed].sort(), declared.sort(), 'Chaque attente déclarée doit être exécutée.');
-});
-
-test('contrat du métamodèle : une réponse relie une technologie à un problème', () => {
-  assert.deepEqual(relationRules.addresses, expected('metamodel', 'problem-response'));
-});
-
-test('contrat du modèle : format et structure des citations publiées', async () => {
-  const { corpus } = await readCorpus();
-  const data = compileKnowledge(corpus);
-  assert.deepEqual({ format: data.format, citationColumns: data.citations[0].length },
-    expected('model', 'public-graph-format'));
-});
-
-test('contrat du site : chemins relatifs et manifeste des versions', () => {
-  const asset = releasedVersionsAsset(current);
-  assert.deepEqual({ base: appConfig.base, versionsPath: asset.fileName }, expected('application', 'static-deployment'));
-  assert.deepEqual(JSON.parse(asset.source), current);
-});
-
 test('les garanties modifiées, extensions compatibles et régressions déterminent le rang', () => {
+  const suites: TestSuites = {
+    metamodel: { 'problem-response': { kind: 'contract', introduction: 'coverage', expected: { from: 'technology', to: 'problem' } } },
+    model: { 'public-graph-format': { kind: 'contract', introduction: 'coverage', expected: 1 } },
+    application: {},
+  };
   const edited = structuredClone(suites);
   edited.metamodel['problem-response'].expected = { from: 'party', to: 'problem' };
   edited.model['compatible-extension'] = { kind: 'contract', introduction: 'extension', expected: true };

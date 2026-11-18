@@ -12,7 +12,7 @@ async function readSamples(root: string) {
     if (error.code === 'ENOENT') return [];
     throw error;
   });
-  const files = entries.filter(entry => entry.isFile() && entry.name.endsWith('.json'));
+  const files = entries.filter(entry => entry.isFile() && entry.name.endsWith('.json') && entry.name !== 'finished.json');
   const samples: Sample[] = [];
   for (const file of files) samples.push(JSON.parse(await readFile(resolve(file.parentPath, file.name), 'utf8')));
   return samples;

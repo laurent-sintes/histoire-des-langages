@@ -1,3 +1,4 @@
+storeDir: .cache/pnpm-store
 allowBuilds:
   # The lockfile includes esbuild's optional, platform-specific binary package.
   esbuild: false

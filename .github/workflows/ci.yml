@@ -13,8 +13,12 @@ jobs:
     name: Valider et fabriquer
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    permissions:
+      contents: read
+      deployments: read
     outputs:
       telemetry: ${{ steps.telemetry.outputs.artifact-id }}
+      release-base: ${{ steps.release-base.outputs.sha }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -26,16 +30,29 @@ jobs:
           node-version: '24'
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - name: Contrôler les versions de ce push
-        if: github.event_name == 'push'
+      - name: Identifier la dernière publication Pages réussie
+        id: release-base
         env:
-          PREVIOUS_SHA: ${{ github.event.before }}
-        run: pnpm git:work version-check "$PREVIOUS_SHA" "$GITHUB_SHA"
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          base="$(node tools/git/pages.ts)"
+          echo "sha=$base" >> "$GITHUB_OUTPUT"
+      - name: Contrôler les versions depuis la dernière publication
+        env:
+          RELEASE_BASE: ${{ steps.release-base.outputs.sha }}
+        run: pnpm git:work version-check "$RELEASE_BASE" "$GITHUB_SHA"
+      - name: Contrôler les révisions du corpus depuis la dernière publication
+        env:
+          RELEASE_BASE: ${{ steps.release-base.outputs.sha }}
+        run: node tools/performance/run.ts check-revisions tools/knowledge.ts check --against-ref "$RELEASE_BASE"
       - run: pnpm check
-      - run: pnpm test
       - run: pnpm check:sources
       - run: pnpm extract:pdf tmp/preetude-ci.txt
       - run: pnpm build
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test
+        env:
+          KNOWLEDGE_USE_PREBUILT_SITE: 'true'
       - name: Préparer GitHub Pages
         if: github.ref == 'refs/heads/main' && vars.PAGES_ENABLED == 'true'
         uses: actions/upload-pages-artifact@v4
@@ -76,6 +93,7 @@ jobs:
     if: github.ref == 'refs/heads/main' && vars.PAGES_ENABLED == 'true'
     permissions:
       contents: read
+      deployments: read
       pages: write
       id-token: write
     runs-on: ubuntu-24.04
@@ -86,15 +104,45 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Vérifier que main pointe encore sur ce commit
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Revérifier la référence de publication
+        id: release-base
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CHECKED_BASE: ${{ needs.verify.outputs.release-base }}
+        run: |
+          base="$(node tools/git/pages.ts)"
+          echo "sha=$base" >> "$GITHUB_OUTPUT"
+          echo "changed=$([ "$base" = "$CHECKED_BASE" ] && echo false || echo true)" >> "$GITHUB_OUTPUT"
+      - uses: pnpm/action-setup@v5
+        if: steps.release-base.outputs.changed == 'true'
+      - run: pnpm install --frozen-lockfile
+        if: steps.release-base.outputs.changed == 'true'
+      - name: Rejouer le contrôle de versions si la référence a changé
+        if: steps.release-base.outputs.changed == 'true'
+        env:
+          RELEASE_BASE: ${{ steps.release-base.outputs.sha }}
+        run: pnpm git:work version-check "$RELEASE_BASE" "$GITHUB_SHA"
+      - name: Rejouer le contrôle des révisions si la référence a changé
+        if: steps.release-base.outputs.changed == 'true'
+        env:
+          RELEASE_BASE: ${{ steps.release-base.outputs.sha }}
+        run: node tools/performance/run.ts check-revisions tools/knowledge.ts check --against-ref "$RELEASE_BASE"
+      - name: Vérifier que main pointe encore sur la cible
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           latest="$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)"
-          if [ "$latest" = "$GITHUB_SHA" ]; then
-            echo 'publish=true' >> "$GITHUB_ENV"
+          if [ "$latest" != "$GITHUB_SHA" ]; then
+            echo "Le commit $GITHUB_SHA a été remplacé sur main par $latest."
+            exit 1
           fi
       - name: Déployer
-        if: env.publish == 'true'
         id: deployment
         uses: actions/deploy-pages@v4

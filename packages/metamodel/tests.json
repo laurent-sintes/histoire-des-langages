@@ -3,5 +3,9 @@
     "kind": "contract",
     "introduction": "coverage",
     "expected": { "from": "technology", "to": "problem" }
+  },
+  "acyclic-descent": {
+    "kind": "regression",
+    "expected": { "descentCycleAccepted": false, "reciprocalInfluenceAccepted": true }
   }
 }

@@ -1,0 +1,9 @@
+{
+  "status": "consolidated",
+  "reviewedOn": "2026-11-18",
+  "reviewedFiles": {
+    "PLAN.md": "7cf1800f80745143f0d19a7a08bc9b9346cdaa60",
+    "preuves/instantanes-corpus.zip": "bcba4cf11eb52e9397628249fd000e147d605d42"
+  },
+  "summary": "Bilan de clôture au commit relu. A1, A4, A6, A7 et A8 sont résolus. A2, A3 et A5 ont passé les vérifications locales et attendent la confirmation sur GitHub. Les quatre instantanés archivés sont vérifiés."
+}

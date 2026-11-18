@@ -3,6 +3,7 @@ import { before, test } from 'node:test';
 import { readCorpus } from '../packages/compiler/build.ts';
 import { compileKnowledge } from '../packages/compiler/compile.ts';
 import { validateCorpus } from '../packages/compiler/validate.ts';
+import { checkRevisions } from '../packages/compiler/revisions.ts';
 import type { Corpus } from '../packages/metamodel/model.ts';
 import { createKnowledgeModel } from '../packages/contracts/runtime.ts';
 
@@ -26,11 +27,23 @@ test('une nouvelle révision de source préserve les citations existantes', () =
   const edited = structuredClone(corpus);
   const original = edited.sources.find(source => source.id === 'src-rfc4627')!;
   edited.sources.push({ ...original, revision: 2, title: 'Autre révision' });
+  assert.doesNotThrow(() => checkRevisions(corpus, edited));
   const graph = createKnowledgeModel(compileKnowledge(validateCorpus(edited)));
   const edge = graph.outgoing('json').find(relation => relation.id === 'r-json-echange')!;
   assert.equal(graph.evidence(edge)[0].source.revision, 1);
   edited.sources = edited.sources.filter(source => source !== original);
   assert.throws(() => validateCorpus(edited), /Source ou révision inconnue/);
+});
+
+test('la comparaison historique impose une révision et conserve les anciennes notices', () => {
+  const edited = structuredClone(corpus);
+  const json = edited.technologies.find(node => node.id === 'json')!;
+  json.label += ' modifié';
+  assert.throws(() => checkRevisions(corpus, validateCorpus(edited)), /Révision à augmenter : json/);
+  json.revision++;
+  assert.doesNotThrow(() => checkRevisions(corpus, validateCorpus(edited)));
+  edited.sources.find(source => source.id === 'src-rfc4627')!.title += ' modifiée';
+  assert.throws(() => checkRevisions(corpus, validateCorpus(edited)), /Révision de source modifiée/);
 });
 
 test('une source IA seule ne peut pas étayer un nœud', () => {

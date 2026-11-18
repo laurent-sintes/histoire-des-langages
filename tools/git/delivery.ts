@@ -4,8 +4,8 @@ import { affectedComponents, components, parseBumps, parseComponentVersion, plan
 import type { Versions } from './versions.ts';
 import { parseTestSuite, testImpact } from './test-impact.ts';
 import type { TestSuites } from './test-impact.ts';
+import { pagesHead, repository, verifyReleaseBase } from './pages.ts';
 
-const repository = 'laurent-sintes/histoire-des-langages';
 const branch = 'main';
 
 function run(program: string, args: string[], capture = false) {
@@ -92,7 +92,10 @@ function versionRange(before: string, head: string) {
 
 function versionPlan() {
   requireMain();
-  const { previous, current, affected, minimums } = versionRange('origin/main', 'HEAD');
+  const before = pagesHead();
+  const head = git('rev-parse', 'HEAD');
+  verifyReleaseBase(before, head, (base, target) => git('merge-base', base, target));
+  const { previous, current, affected, minimums } = versionRange(before, head);
   if (!previous) console.log('Première livraison des versions à 1.1.1.');
   for (const key of components) {
     const prior = previous?.[key] ?? '—';
@@ -105,6 +108,7 @@ function checkVersions(before: string | undefined, head: string | undefined) {
   if (!before || !head || ![before, head].every(sha => /^[a-f0-9]{40}$/.test(sha))) {
     throw new Error('Usage : pnpm git:work version-check SHA-avant SHA-poussé');
   }
+  verifyReleaseBase(before, head, (base, target) => git('merge-base', base, target));
   const { previous, current, affected, minimums } = versionRange(before, head);
   const required = planVersions(previous, current, affected, {}, minimums);
   const missing = components.filter(key => current[key] !== required[key]);
@@ -121,15 +125,21 @@ function push(args: string[]) {
   run('git', [...credentials, 'fetch', '--no-tags', 'origin', `refs/heads/${branch}:refs/remotes/origin/${branch}`]);
   const before = git('rev-parse', 'origin/main');
   const head = git('rev-parse', 'HEAD');
-  if (before === head) {
+  if (git('merge-base', before, head) !== before) throw new Error('main a divergé de GitHub. Réconcilier les deux historiques avant le push.');
+  const base = pagesHead();
+  verifyReleaseBase(base, head, (published, target) => git('merge-base', published, target));
+  if (before === head && base === head) {
     if (args.length) throw new Error('Aucun commit à livrer. Créer le commit de changement avant de demander une version.');
     console.log('Le commit est déjà sur GitHub.');
     return;
   }
-  if (git('merge-base', before, head) !== before) throw new Error('main a divergé de GitHub. Réconcilier les deux historiques avant le push.');
-  const { previous, current, affected, minimums } = versionRange(before, head);
+  const { previous, current, affected, minimums } = versionRange(base, head);
   const planned = planVersions(previous, current, affected, bumps, minimums);
   const changed = components.filter(key => current[key] !== planned[key]);
+  if (before === head && !changed.length) {
+    console.log('Le commit est déjà sur GitHub. Relancer la CI pour retenter sa publication.');
+    return;
+  }
   if (changed.length) {
     const paths = changed.map(key => versionFiles[key]);
     for (const key of changed) writeFileSync(versionFiles[key], JSON.stringify({ version: planned[key] }, null, 2) + '\n', 'utf8');
