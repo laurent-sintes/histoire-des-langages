@@ -49,10 +49,13 @@ jobs:
       - run: pnpm check:sources
       - run: pnpm extract:pdf tmp/preetude-ci.txt
       - run: pnpm build
-      - run: pnpm exec playwright install --with-deps chromium
-      - run: pnpm test
+      - name: Tester les outils et le site fabriqué
         env:
           KNOWLEDGE_USE_PREBUILT_SITE: 'true'
+        run: |
+          browser="$(command -v google-chrome)"
+          "$browser" --version
+          PLAYWRIGHT_CHROMIUM_EXECUTABLE="$browser" pnpm test
       - name: Préparer GitHub Pages
         if: github.ref == 'refs/heads/main' && vars.PAGES_ENABLED == 'true'
         uses: actions/upload-pages-artifact@v4
