@@ -28,7 +28,7 @@ try {
   for (let attempt = 0; attempt < 4; attempt++) {
     const exists = git(['ls-remote', '--exit-code', '--heads', 'origin', ref]);
     if (exists === 0) {
-      requireGit(['fetch', '--no-tags', 'origin', ref]);
+      requireGit(['fetch', '--no-tags', 'origin', ref], worktree);
       requireGit(['switch', '--detach', 'FETCH_HEAD'], worktree);
     } else if (exists !== 2) {
       throw new Error('Impossible de lire la branche statistique distante.');
