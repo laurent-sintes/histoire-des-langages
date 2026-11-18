@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "commit": "caafdd15fd1427a63cacff0df4205dff90b599fc",
+  "task": "check-model",
+  "dirty": false,
+  "measuredAt": "2026-11-18T21:55:41.215Z",
+  "exitCode": 0,
+  "profile": "github-actions/linux/x64/v24.22.3/ubuntu24/4",
+  "run": "44406388529/1",
+  "wallMs": 90,
+  "cpuMs": 197,
+  "peakRssKiB": 96396
+}
