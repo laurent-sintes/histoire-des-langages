@@ -122,6 +122,9 @@ Au démarrage, relever le SHA et l'état du checkout, préserver les travaux en 
 | 2026-11-18 | A3 | 3 | À vérifier | Checkout principal sur `f3b847b`. 11 tests ciblés et `pnpm check` réussis. Le contrôle `--against-ref` passe sur le SHA réellement publié. Les scénarios locaux refusent une modification de nœud à révision égale et la réécriture d’une notice, puis vérifient la conservation des citations. Intégration au workflow à confirmer lors d’une livraison demandée. |
 | 2026-11-18 | A2 | 2 | À vérifier | Checkout principal sur `f3b847b`. L’API confirme le déploiement réussi 7894190595 pour ce SHA. 9 tests ciblés, vérification TypeScript et contrôle de référence réelle réussis. Scénarios A→B→C et changement de référence couverts sur données de test sans création de commit. Exécution des deux déclencheurs et publication GitHub à confirmer lors d’une livraison demandée. |
 | 2026-11-18 | A1 | 1 | Résolu | Checkout principal sur `f3b847b`, diff local des dépendances et du schéma. PDF.js 6.2.108 et Zod 4.6.6. `pnpm audit --json` donne 0 avis. Schéma équivalent par réutilisation de la définition du tableau et conservation de `minItems: 1`. Graphe de SHA-256 `B99B8D0A6DA038CEC13974EF45CCA0977CE52E0DB177EA3BDC224656829F934D` avant et après. 17 tests ciblés, 10 pages extraites, contrôle du corpus et build réussis. |
+| 2026-11-18 | A2 | 2 | Résolu | Les contrôles de versions et le déploiement de `edb1a4f` ont réussi après un push puis un lancement manuel. [Run du push](https://github.com/laurent-sintes/histoire-des-langages/actions/runs/44398939381) · [Run manuel](https://github.com/laurent-sintes/histoire-des-langages/actions/runs/44399299487) |
+| 2026-11-18 | A3 | 3 | Résolu | Le contrôle des révisions du corpus passe depuis la référence du dernier déploiement réussi sur les deux déclencheurs. Les mesures de `check-revisions` sont archivées pour `edb1a4f`. [Historique des mesures](https://github.com/laurent-sintes/histoire-des-langages/tree/performance-history/samples/edb1a4fdf827e179e2f1b2e8ff16a104d9bd5f5b) |
+| 2026-11-18 | A5 | 4 | Résolu | Le run du push affiche 28 tests réussis, dont le parcours avec Chrome sur le build. Sur le site Pages public, la recherche TypeScript et l'ouverture d'une preuve fonctionnent. Le manifeste public annonce `metamodel 1.1.2`, `model 1.1.1` et `application 1.1.2`. [Site publié](https://laurent-sintes.github.io/histoire-des-langages/) · [Manifeste](https://laurent-sintes.github.io/histoire-des-langages/versions.json) |
 
 ## Historique de l'audit
 
@@ -130,7 +133,8 @@ Au démarrage, relever le SHA et l'état du checkout, préserver les travaux en 
 | 2026-11-18 | Validation des préconisations | A1 à A8 et les trois arbitrages validés par Laurent | Plan d'application préparé pour relecture |
 | 2026-11-18 | Exécution locale | Lots 1, 2, 3, 7, 4, 5 puis 6 traités depuis `f3b847b`. Résultats vérifiés par constat. Au dernier contrôle, 28 tests concernés passent, `pnpm check` et `pnpm check:sources` réussissent, `pnpm audit` indique zéro avis et actionlint valide le workflow. Le checkout contient les changements locaux. | Confirmer A2, A3 et A5 sur GitHub à l’occasion d’une livraison demandée. |
 | 2026-11-18 | Clôture au commit | A1, A4, A6, A7 et A8 résolus. Les 28 tests concernés, le contrôle du corpus, les empreintes des sources et le build ont réussi avant le commit. | Confirmer A2, A3 et A5 pendant la livraison demandée. |
+| 2026-11-18 | Vérification de la livraison | A2, A3 et A5 confirmés sur GitHub. Le premier run a été annulé après plusieurs minutes à l'étape d'installation de Chromium. Le correctif `edb1a4f` utilise Chrome fourni par le runner. | Résultats archivés. |
 
 ## Reprise
 
-**Suivi après clôture** — Confirmer A2, A3 et A5 sur le workflow GitHub et la publication Pages. Consigner les résultats datés dans cet audit.
+**Suivi après clôture** — A1 à A8 sont résolus. Le bilan, les résultats de CI et les preuves de publication sont consignés ci-dessus.
