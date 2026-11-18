@@ -15,6 +15,7 @@ Comprendre comment les idées circulent entre langages, personnes, organisations
 - [Parcours de Pascal à TypeScript](docs/parcours-pascal-delphi-csharp-typescript.md)
 - [Programme de recherche et prochaines étapes](docs/roadmap.md)
 - [Livraison Git et GitHub Pages](docs/livraison.md)
+- [Versions du métamodèle, du modèle et de l’application](docs/versioning.md)
 - [Historique et dérives de performance](docs/performance.md)
 - [Données initiales](source/connaissances.json) et [schéma](source/schema-connaissances.json)
 

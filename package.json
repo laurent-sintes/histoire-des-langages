@@ -10,7 +10,7 @@
     "schema": "node tools/performance/run.ts schema tools/knowledge.ts schema",
     "check": "pnpm build:model && node tools/performance/run.ts check-types node_modules/typescript/bin/tsc --noEmit && node tools/performance/run.ts check-model tools/knowledge.ts check",
     "check:sources": "node tools/performance/run.ts check-sources tools/knowledge.ts check-sources",
-    "test": "node tools/performance/run.ts tests --test --test-isolation=none tools/knowledge.test.ts tools/performance/statistics.test.ts",
+    "test": "node tools/performance/run.ts tests --test --test-isolation=none tools/knowledge.test.ts tools/performance/statistics.test.ts tools/git/versions.test.ts",
     "build": "node tools/performance/run.ts build-site node_modules/vite/bin/vite.js build app --config app/vite.config.ts",
     "build:model": "node tools/performance/run.ts build-model tools/knowledge.ts build",
     "extract:pdf": "node tools/performance/run.ts extract-pdf tools/extract-pdf.ts",

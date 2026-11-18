@@ -1,0 +1,7 @@
+{
+  "public-graph-format": {
+    "kind": "contract",
+    "introduction": "coverage",
+    "expected": { "format": 2, "citationColumns": 3 }
+  }
+}

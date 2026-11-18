@@ -1,0 +1,7 @@
+{
+  "static-deployment": {
+    "kind": "contract",
+    "introduction": "coverage",
+    "expected": { "base": "./", "versionsPath": "versions.json" }
+  }
+}

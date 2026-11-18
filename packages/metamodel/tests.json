@@ -1,0 +1,7 @@
+{
+  "problem-response": {
+    "kind": "contract",
+    "introduction": "coverage",
+    "expected": { "from": "technology", "to": "problem" }
+  }
+}
