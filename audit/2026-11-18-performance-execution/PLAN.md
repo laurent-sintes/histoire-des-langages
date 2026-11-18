@@ -104,9 +104,10 @@ Comparer le baseline `66cff5e` à chaque changement candidat sur la même machin
 | 2026-11-18 | Lancement | Plan validé, exécution locale depuis `66cff5e` | Sans commit ni push |
 | 2026-11-18 | Vérification d'intégration | Les quatre lots ont été traités dans l'ordre. Les 32 tests concernés, le contrôle des types et des sources, le build et le parcours navigateur ont réussi. L'échantillon JSON local des tests a été retrouvé avec sa tâche et son SHA. | Mesurer P1 de bout en bout sur un futur push limité à `audit/`, après la mise en service du workflow optimisé. |
 | 2026-11-18 | Clôture au commit | P2, P3 et P4 résolus. P1 vérifié localement. Les 32 tests concernés et `pnpm check` ont réussi avant la livraison. | Vérifier la CI et Pages lors de la livraison, puis vérifier P1 sur un push limité à `audit/`. |
+| 2026-11-18 | Livraison | `caafdd1` publié avec le métamodèle 1.1.2, le modèle 1.1.1 et l'application 1.1.3. CI complète et archivage des mesures réussis en 85 s. [Run de livraison](https://github.com/laurent-sintes/histoire-des-langages/actions/runs/44406388529) | Le push de ce bilan sert à vérifier P1. La CI du commit documentaire doit garder `caafdd1` comme SHA publié et omettre la préparation de l'artefact et le déploiement Pages. |
 
 ## Reprise
 
-P2, P3 et P4 sont vérifiés localement. P1 est validé sur les historiques locaux et attend la mesure GitHub. Les 33 s correspondent au job de déploiement qui serait évité sur le run documentaire de référence. Comme l'archivage et Pages tournaient en parallèle, ces 33 s ne constituent pas une mesure du gain total.
+P2, P3 et P4 sont vérifiés localement et la livraison a réussi. Pour P1, consulter la décision et le résultat du push documentaire dans la [CI de validation et publication](https://github.com/laurent-sintes/histoire-des-langages/actions/workflows/ci.yml). Le run documentaire de référence durait 108 s, dont 33 s pour le job Pages. Comme l'archivage et Pages tournaient en parallèle, ces 33 s ne constituent pas une mesure du gain total.
 
 L'aperçu du build reste accessible sur [127.0.0.1:4173](http://127.0.0.1:4173/). Le suivi de P1 est conservé au bilan de clôture.

@@ -2,7 +2,7 @@
   "status": "consolidated",
   "reviewedOn": "2026-11-18",
   "reviewedFiles": {
-    "PLAN.md": "f04b9bc5a3528ed7ca3e679f76decb008d67937f"
+    "PLAN.md": "472f92a5dbc12554b63888fa4b7caa80ef6e025d"
   },
-  "summary": "Bilan de clôture relu après validation locale des quatre lots. P2, P3 et P4 sont résolus. La mesure GitHub de bout en bout reste inscrite au suivi de P1."
+  "summary": "Bilan de clôture et livraison Pages caafdd1 relus. P2, P3 et P4 sont résolus. Le push de cette mise à jour documentaire vérifie la voie sans déploiement prévue par P1."
 }
