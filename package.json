@@ -8,7 +8,7 @@
   "packageManager": "pnpm@11.25.0",
   "scripts": {
     "schema": "node tools/performance/run.ts schema tools/knowledge.ts schema",
-    "check": "pnpm build:model && node tools/performance/run.ts check-types node_modules/typescript/bin/tsc --noEmit && node tools/performance/run.ts check-model tools/knowledge.ts check",
+    "check": "pnpm build:model && node tools/typecheck.ts && node tools/performance/run.ts check-model tools/knowledge.ts check",
     "check:sources": "node tools/performance/run.ts check-sources tools/knowledge.ts check-sources",
     "test": "node tools/test/run.ts all",
     "test:affected": "node tools/test/run.ts affected",

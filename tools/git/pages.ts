@@ -49,6 +49,21 @@ export function verifyReleaseBase(base: string, head: string, mergeBase: (base: 
   }
 }
 
+function releaseGit(...args: string[]) {
+  return execFileSync('git', args, { encoding: 'utf8' });
+}
+
+export function requiresPagesDeployment(base: string, head: string, event: string, git = releaseGit) {
+  verifyReleaseBase(base, head, (before, after) => git('merge-base', before, after).trim());
+  if (event !== 'push') return true;
+  const changed = git('diff', '--no-renames', '--name-only', '-z', base, head, '--').split('\0').filter(Boolean);
+  return !changed.length || changed.some(path => !path.startsWith('audit/'));
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  console.log(publishedPages().sha);
+  const args = process.argv.slice(2);
+  if (!args.length) console.log(publishedPages().sha);
+  else if (args[0] === 'requires-deploy' && args.length === 4) {
+    console.log(requiresPagesDeployment(args[1], args[2], args[3]));
+  } else throw new Error('Usage : node tools/git/pages.ts [requires-deploy SHA-publié SHA-candidat événement]');
 }

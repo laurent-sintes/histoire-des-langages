@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { pagesHead, publishedPages, verifyReleaseBase } from './pages.ts';
+import { pagesHead, publishedPages, requiresPagesDeployment, verifyReleaseBase } from './pages.ts';
 import { affectedComponents, planVersions } from './versions.ts';
 
 const published = 'a'.repeat(40);
@@ -34,4 +34,18 @@ test('une publication en attente bloque la préparation locale et un succès cha
   assert.throws(() => publishedPages(() => [] as never), /Aucun déploiement/);
   assert.throws(() => verifyReleaseBase(published, candidate, () => rejected), /ancêtre/);
   assert.doesNotThrow(() => verifyReleaseBase(published, candidate, () => published));
+});
+
+test('seul un push limité à audit/ depuis la dernière publication peut éviter Pages', () => {
+  const run = (paths: string[], event = 'push') => requiresPagesDeployment(published, candidate, event, (...args) => {
+    if (args[0] === 'merge-base') return published;
+    assert.deepEqual(args, ['diff', '--no-renames', '--name-only', '-z', published, candidate, '--']);
+    return paths.join('\0');
+  });
+  assert.equal(run(['audit/session/PLAN.md', 'audit/session/consolidation.json']), false);
+  assert.equal(run(['app/main.tsx', 'audit/session/PLAN.md']), true);
+  assert.equal(run(['audit-other/PLAN.md']), true);
+  assert.equal(run([]), true);
+  assert.equal(run(['audit/session/PLAN.md'], 'workflow_dispatch'), true);
+  assert.throws(() => requiresPagesDeployment(published, candidate, 'push', () => rejected), /ancêtre/);
 });

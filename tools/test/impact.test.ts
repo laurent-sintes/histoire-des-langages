@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { test } from 'node:test';
 import type { TestContext } from 'node:test';
-import { selectTests } from './impact.ts';
+import { createTestSelector, selectTests } from './impact.ts';
 
 function fixture(context: TestContext, files: Record<string, string>) {
   const root = mkdtempSync(join(tmpdir(), 'language-test-impact-'));
@@ -33,7 +33,9 @@ test('les sauvegardes indépendantes sélectionnent les seules dépendances dire
     ['tools/one.test.ts', ['packages/leaf.ts']],
   ]);
   assert.deepEqual([...selectTests(root, tests, ['tools/second.ts']).selected.keys()], ['tools/two.test.ts']);
-  assert.equal(selectTests(root, tests, ['README.md', 'app/dist/x.js']).selected.size, 0);
+  assert.equal(selectTests(root, tests, [
+    'README.md', 'app/dist', 'app/dist/x.js', 'app/generated', '.cache/package.json', 'audit/session/package.json',
+  ]).selected.size, 0);
 });
 
 test('la sélection gère les entrées hors imports, la suppression et les imports dynamiques inconnus', context => {
@@ -49,4 +51,27 @@ test('la sélection gère les entrées hors imports, la suppression et les impor
     ['tools/corpus.test.ts', ['source/connaissances.json']], ['tools/renamed.test.ts', ['tools/former.ts']],
   ]);
   assert.deepEqual(result.uncertain, ['tools/dynamic.test.ts']);
+});
+
+test('en veille, les imports modifiés et le catalogue des tests sont réévalués', context => {
+  const root = fixture(context, {
+    'tools/one.test.ts': "import './reader.ts';",
+    'tools/reader.ts': "import './before.ts';",
+    'tools/before.ts': 'export {};',
+    'tools/after.ts': 'export {};',
+  });
+  const select = createTestSelector(root);
+  const tests = ['tools/one.test.ts'];
+  assert.deepEqual([...select(tests, ['tools/before.ts']).selected.keys()], tests);
+  writeFileSync(join(root, 'tools/reader.ts'), "import './after.ts';");
+  select(tests, ['tools/reader.ts']);
+  assert.equal(select(tests, ['tools/before.ts']).selected.size, 0);
+  assert.deepEqual([...select(tests, ['tools/after.ts']).selected.keys()], tests);
+  rmSync(join(root, 'tools/after.ts'));
+  assert.deepEqual([...select(tests, ['tools/after.ts'], true).selected.keys()], tests);
+  assert.deepEqual(select(tests, ['tools/reader.ts']).uncertain, ['tools/reader.ts → ./after.ts']);
+  writeFileSync(join(root, 'tools/after.ts'), 'export {};');
+  writeFileSync(join(root, 'tools/new.test.ts'), "import './after.ts';");
+  assert.deepEqual([...select([...tests, 'tools/new.test.ts'], ['tools/after.ts'], true).selected.keys()],
+    ['tools/one.test.ts', 'tools/new.test.ts']);
 });

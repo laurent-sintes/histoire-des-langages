@@ -19,6 +19,7 @@ jobs:
     outputs:
       telemetry: ${{ steps.telemetry.outputs.artifact-id }}
       release-base: ${{ steps.release-base.outputs.sha }}
+      publish-pages: ${{ steps.pages-decision.outputs.publish }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -45,6 +46,16 @@ jobs:
         env:
           RELEASE_BASE: ${{ steps.release-base.outputs.sha }}
         run: node tools/performance/run.ts check-revisions tools/knowledge.ts check --against-ref "$RELEASE_BASE"
+      - name: Décider si le site Pages doit être republié
+        id: pages-decision
+        env:
+          RELEASE_BASE: ${{ steps.release-base.outputs.sha }}
+        run: |
+          publish="$(node tools/git/pages.ts requires-deploy "$RELEASE_BASE" "$GITHUB_SHA" "$GITHUB_EVENT_NAME")"
+          echo "publish=$publish" >> "$GITHUB_OUTPUT"
+          if [ "$publish" = false ]; then
+            echo "Le diff depuis la dernière publication est limité au dossier audit/."
+          fi
       - run: pnpm check
       - run: pnpm check:sources
       - run: pnpm extract:pdf tmp/preetude-ci.txt
@@ -57,7 +68,7 @@ jobs:
           "$browser" --version
           PLAYWRIGHT_CHROMIUM_EXECUTABLE="$browser" pnpm test
       - name: Préparer GitHub Pages
-        if: github.ref == 'refs/heads/main' && vars.PAGES_ENABLED == 'true'
+        if: github.ref == 'refs/heads/main' && vars.PAGES_ENABLED == 'true' && steps.pages-decision.outputs.publish == 'true'
         uses: actions/upload-pages-artifact@v4
         with:
           path: app/dist
@@ -93,7 +104,7 @@ jobs:
   deploy:
     name: Publier sur GitHub Pages
     needs: verify
-    if: github.ref == 'refs/heads/main' && vars.PAGES_ENABLED == 'true'
+    if: github.ref == 'refs/heads/main' && vars.PAGES_ENABLED == 'true' && needs.verify.outputs.publish-pages == 'true'
     permissions:
       contents: read
       deployments: read

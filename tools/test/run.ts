@@ -1,7 +1,10 @@
 import { spawn } from 'node:child_process';
 import { watch } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { changedFiles, selectTests, testFiles, watchedPath } from './impact.ts';
+import { changedFiles, isSharedInput, normalizeChanges, testFiles, watchedPath } from './paths.ts';
+
+type Selector = ReturnType<typeof import('./impact.ts').createTestSelector>;
+type WatchContext = { tests?: string[]; selector?: Selector };
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const [mode, ...args] = process.argv.slice(2);
@@ -16,8 +19,29 @@ function run(tests: string[]) {
   });
 }
 
-async function affected(paths: string[], planOnly = false) {
-  const { selected, uncertain } = selectTests(root, testFiles(root), paths);
+async function affected(paths: string[], planOnly = false, watcher?: WatchContext, structureChanged = false) {
+  const changed = normalizeChanges(root, paths);
+  if (!changed.length) {
+    console.log('Aucun test local sélectionné.');
+    return 0;
+  }
+  if (watcher && (structureChanged || !watcher.tests)) watcher.tests = testFiles(root);
+  const tests = watcher?.tests ?? testFiles(root);
+  const shared = changed.filter(isSharedInput);
+  let selected: Map<string, string[]>;
+  let uncertain: string[] = [];
+  if (shared.length) {
+    if (watcher) watcher.selector = undefined;
+    selected = new Map(tests.map(test => [test, shared]));
+  } else {
+    let selector = watcher?.selector;
+    if (!selector) {
+      const { createTestSelector } = await import('./impact.ts');
+      selector = createTestSelector(root);
+      if (watcher) watcher.selector = selector;
+    }
+    ({ selected, uncertain } = selector(tests, changed, structureChanged));
+  }
   for (const [test, reasons] of selected) console.log(`${test} ← ${reasons.join(', ')}`);
   if (!selected.size) console.log('Aucun test local sélectionné.');
   if (uncertain.length) console.error('Sélection indéterminée pour : ' + uncertain.join(', '));
@@ -26,7 +50,9 @@ async function affected(paths: string[], planOnly = false) {
 }
 
 function watchTests() {
+  const context: WatchContext = {};
   let pending = new Set<string>();
+  let structureChanged = false;
   let timer: NodeJS.Timeout | undefined;
   let running = false;
   function schedule() {
@@ -36,8 +62,10 @@ function watchTests() {
       running = true;
       const batch = [...pending];
       pending = new Set();
+      const needsDiscovery = structureChanged;
+      structureChanged = false;
       try {
-        const exit = await affected(batch);
+        const exit = await affected(batch, false, context, needsDiscovery);
         if (exit) console.error(`Vérification de la sauvegarde terminée avec le code ${exit}.`);
       } catch (error) {
         console.error(error);
@@ -47,10 +75,14 @@ function watchTests() {
       }
     }, 200);
   }
-  const watcher = watch(root, { recursive: true }, (_, name) => {
-    if (!name) return;
-    const path = name.replaceAll('\\', '/');
+  const watcher = watch(root, { recursive: true }, (event, name) => {
+    const path = name?.replaceAll('\\', '/') ?? 'tsconfig.json';
+    if (path === '.gitignore') {
+      structureChanged = true;
+      return;
+    }
     if (!watchedPath(path)) return;
+    structureChanged ||= event === 'rename' || !name;
     pending.add(path);
     schedule();
   });
